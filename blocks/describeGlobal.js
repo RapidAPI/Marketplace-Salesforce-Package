@@ -15,6 +15,7 @@ module.exports.describeGlobal =(req, res) =>{
     
     let to = args.to || "to";
 
+    // make the request
     request.get({
         headers:{'Authorization':`Bearer ${token}`},
         url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects`,
