@@ -24,8 +24,14 @@ app.post(`/api/${PACKAGE_NAME}/getAllVersions`, require('./blocks/getAllVersions
 app.post(`/api/${PACKAGE_NAME}/getResourcesByVersion`,require ('./blocks/getResourcesByVersion.js').getResourcesByVersion);
 app.post(`/api/${PACKAGE_NAME}/getLimits`,require ('./blocks/getLimits.js').limits);
 app.post(`/api/${PACKAGE_NAME}/describeGlobal`,require ('./blocks/describeGlobal.js').describeGlobal);
-app.post(`/api/${PACKAGE_NAME}/createAccountObject`,require ('./blocks/createAccountObject.js').createAcountObject);
-app.post(`/api/${PACKAGE_NAME}/getAccountObject`,require ('./blocks/getAccountObject.js').getAccountObject);
+app.post(`/api/${PACKAGE_NAME}/createSObject`,require ('./blocks/createSObject.js').createSObject);
+app.post(`/api/${PACKAGE_NAME}/getSObject`,require ('./blocks/getSObject.js').getSObject);
+app.post(`/api/${PACKAGE_NAME}/describeSingleObject`,require ('./blocks/describeSingleObject.js').describe);
+app.post(`/api/${PACKAGE_NAME}/getObjectsDeletedRecords`,require ('./blocks/getObjectsDeletedRecords.js').getDeleted);
+app.post(`/api/${PACKAGE_NAME}/getObjectsUpdatedRecords`,require ('./blocks/getObjectsUpdatedRecords.js').getUpdated);
+app.post(`/api/${PACKAGE_NAME}/getObjectsNamedLayouts`,require ('./blocks/getObjectsNamedLayouts.js').getObjectsNamedLayouts);
+app.post(`/api/${PACKAGE_NAME}/getObjectRows`,require ('./blocks/getObjectRows.js').getObjectRows);
+app.post(`/api/${PACKAGE_NAME}/deleteObjectRows`,require ('./blocks/deleteObjectRows.js').deleteObjectRows);
 
 
 

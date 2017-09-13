@@ -5,10 +5,11 @@ const version = config.defultVersion;
 const token = config.accessToken; 
 
 
-module.exports.getAccountObject =(req, res) =>{
+module.exports.createSObject =(req, res) =>{
     
     const args = req.body.args;
-    const SOName = args.SObjectName;
+    const SOName = args.SOName;
+    const SOType = args.SOType;
 
     let r = {
         callback        : "",
@@ -16,11 +17,15 @@ module.exports.getAccountObject =(req, res) =>{
     };
     
     let to = args.to || "to";
-
-    request.get({
-        headers:{'Authorization':`Bearer ${token}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOName}`,
+    request.post({
+        headers:{
+            "Authorization" : `Bearer ${token}`,
+            "Content-Type" : "application/json"
+        },
+        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}`,
+        json:  {"Name": SOName} 
     }
+
     ,function(err, response, body){
         if (err) {
             r.contextWrites[to] = err;

@@ -4,21 +4,24 @@ const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 
-module.exports.describeGlobal =(req, res) =>{
+//TODO: check this endpoint
+module.exports.getUpdated=(req, res) =>{
     
     const args = req.body.args;
-    //TODO: add const If_Modified_Since = 
+    const SOType = args.SOType;
+    const start = args.start;
+    const end = args.end;
+
     let r = {
         callback        : "",
         contextWrites   : {}
     };
     
     let to = args.to || "to";
-    
-    // make the request
+
     request.get({
         headers:{'Authorization':`Bearer ${token}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects`,
+        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}/deleted/?start=${start}end=${end}`,
     }
     ,function(err, response, body){
         if (err) {
@@ -31,4 +34,4 @@ module.exports.describeGlobal =(req, res) =>{
         }
         res.status(200).send(r);
         });
-};
+}   

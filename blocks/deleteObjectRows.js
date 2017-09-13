@@ -1,24 +1,27 @@
 const request = require('request');
 const config = require('../config.json');
 const instance = config.instance;
-const version = config.defultVersion;
 const token = config.accessToken; 
+const version = config.defultVersion;
 
-module.exports.describeGlobal =(req, res) =>{
-    
+//TODO: check this
+module.exports.deleteObjectRows =(req,res) =>{
+
     const args = req.body.args;
-    //TODO: add const If_Modified_Since = 
+    const SOType = args.SOType;
+    const id = args.id;
+
     let r = {
         callback        : "",
         contextWrites   : {}
     };
     
     let to = args.to || "to";
-    
-    // make the request
-    request.get({
+
+
+    request.delete({
         headers:{'Authorization':`Bearer ${token}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects`,
+        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}/${id}`,
     }
     ,function(err, response, body){
         if (err) {
@@ -31,4 +34,4 @@ module.exports.describeGlobal =(req, res) =>{
         }
         res.status(200).send(r);
         });
-};
+}

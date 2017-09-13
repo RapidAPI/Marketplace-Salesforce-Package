@@ -4,21 +4,22 @@ const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 
-module.exports.describeGlobal =(req, res) =>{
+module.exports.describe=(req, res) =>{
     
     const args = req.body.args;
-    //TODO: add const If_Modified_Since = 
+    const SOType = args.SOType;
+
+
     let r = {
         callback        : "",
         contextWrites   : {}
     };
     
     let to = args.to || "to";
-    
-    // make the request
+
     request.get({
         headers:{'Authorization':`Bearer ${token}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects`,
+        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}/describe`,
     }
     ,function(err, response, body){
         if (err) {
@@ -31,4 +32,4 @@ module.exports.describeGlobal =(req, res) =>{
         }
         res.status(200).send(r);
         });
-};
+}   

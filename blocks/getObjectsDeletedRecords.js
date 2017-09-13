@@ -4,11 +4,13 @@ const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 
-
-module.exports.createAcountObject =(req, res) =>{
+//TODO: check this endpoint
+module.exports.getDeleted=(req, res) =>{
     
     const args = req.body.args;
-    const SOName = args.SObjectName;
+    const SOType = args.SOType;
+    const start = args.start;
+    const end = args.end;
 
     let r = {
         callback        : "",
@@ -16,10 +18,10 @@ module.exports.createAcountObject =(req, res) =>{
     };
     
     let to = args.to || "to";
-console.log(token);
-    request.post({
+
+    request.get({
         headers:{'Authorization':`Bearer ${token}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOName}`,
+        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}/deleted/?start=${start}end=${end}`,
     }
     ,function(err, response, body){
         if (err) {
