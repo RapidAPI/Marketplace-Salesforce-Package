@@ -32,6 +32,15 @@ app.post(`/api/${PACKAGE_NAME}/getObjectsUpdatedRecords`,require ('./blocks/getO
 app.post(`/api/${PACKAGE_NAME}/getObjectsNamedLayouts`,require ('./blocks/getObjectsNamedLayouts.js').getObjectsNamedLayouts);
 app.post(`/api/${PACKAGE_NAME}/getObjectRows`,require ('./blocks/getObjectRows.js').getObjectRows);
 app.post(`/api/${PACKAGE_NAME}/deleteObjectRows`,require ('./blocks/deleteObjectRows.js').deleteObjectRows);
+//TODO: add the Externalid endpoint(get,post,delete,patch,head)
+app.post(`/api/${PACKAGE_NAME}/getApprovalLayouts`,require ('./blocks/getApprovalLayouts.js').getApprovalLayouts);
+app.post(`/api/${PACKAGE_NAME}/getCompactLayouts`,require ('./blocks/getCompactLayouts.js').getCompactLayouts);
+app.post(`/api/${PACKAGE_NAME}/describeLayouts`,require ('./blocks/describeLayouts.js').describeLayouts);
+app.post(`/api/${PACKAGE_NAME}/getPlatformAction`,require ('./blocks/getPlatformAction.js').getPlatformAction);
+app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActions`,require ('./blocks/getObjectsQuickActions.js').getObjectsQuickActions);
+app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActionsDescriptive`,require ('./blocks/getObjectsQuickActionsDescriptive.js').getObjectsQuickActionsDescriptive);
+app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActionsdefaultValues`,require ('./blocks/getObjectsQuickActionsdefaultValues.js').getObjectsQuickActionsdefaultValues);
+app.post(`/api/${PACKAGE_NAME}/POSTObjectsQuickActions`,require ('./blocks/POSTObjectsQuickActions.js').POSTObjectsQuickActions);
 
 
 

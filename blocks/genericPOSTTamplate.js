@@ -3,32 +3,38 @@ const config = require('../config.json');
 const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
+const baseUrl = config.baseUrl;
 
-module.exports.describeGlobal =(req, res) =>{
+
+module.exports =(req, res) =>{
     
     const args = req.body.args;
-    const If_Modified_Since = args.If_Modified_Since;
+    const SOName = args.SOName;
+    const SOType = args.SOType;
 
-    //TODO: check with flag const If_Modified_Since = 
     let r = {
         callback        : "",
         contextWrites   : {}
     };
     
     let to = args.to || "to";
-    let header = {};
-    if(If_Modified_Since){
-        header = {'Authorization':`Bearer ${token}`,
-                'If_Modified_Since':If_Modified_Since };
+    let url = ""
+    if(urlParams){
+        url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}/${urlParams}`;
     }
     else{
-        header = {'Authorization':`Bearer ${token}`};
+        url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}`;
     }
-    // make the request
-    request.get({
-        headers: header,
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects`,
+
+    request.post({
+        headers:{
+            "Authorization" : `Bearer ${token}`,
+            "Content-Type" : "application/json"
+        },
+        url: url,
+        json:  {"Name": SOName} 
     }
+
     ,function(err, response, body){
         if (err) {
             r.contextWrites[to] = err;
@@ -40,4 +46,4 @@ module.exports.describeGlobal =(req, res) =>{
         }
         res.status(200).send(r);
         });
-};
+}   

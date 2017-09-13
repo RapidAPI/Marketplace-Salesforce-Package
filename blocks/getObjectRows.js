@@ -6,6 +6,11 @@ module.exports.getObjectRows = (req , res) =>{
     const fields = args.fields;
     const SOType = args.SOType;
     // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `sobjects/${SOType}/${id}` ,`?fields=${fields}`);
+    if(fields){
+        return tamplate(req, res, `sobjects/${SOType}/${id}` ,`?fields=${fields}`);
+    }
+    else{
+        return tamplate(req, res, `sobjects/${SOType}/${id}` );
+    }
 
 }
