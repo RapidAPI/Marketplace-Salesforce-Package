@@ -1,9 +1,10 @@
-var tamplate = require('./genericGETTamplete')
+var tamplate = require('./genericGETTamplete');
 
 module.exports.getApprovalLayouts = (req , res) =>{
     const args = req.body.args;
     const approvalProcessName = args.approvalProcessName;
     const SOType = args.SOType;
+    const instance = args.instance;
     // tamplate(req ,res ,urlEnding ,urlParams)
     if(approvalProcessName){
         return tamplate(req, res, `sobjects/${SOType}/describe/approvalLayouts/${approvalProcessName}`);

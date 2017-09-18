@@ -17,8 +17,12 @@ module.exports.do = function(req, res){
         },
         'blocks'      : [{
             "name":"getAccessToken",
-            "args":[//TODO: edit this fild
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true}
+            "args":[
+                {name:"client_id", type:"credentials", info:"the salesforce client id.", required: true},
+                {name:"client_secret", type:"credentials", info:"the salesforce client secret id.", required: true},
+                {name:"username", type:"credentials", info:"a specific salesforce account.", required: true},
+                {name:"password", type:"credentials", info:"users password.", required: true}
+                
             ],
             "callbacks":[
                 {name:"success", info:"Success"},

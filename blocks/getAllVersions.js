@@ -1,9 +1,9 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+// const instance = config.instance;
 
 module.exports.versions =(req, res) =>{
-
+    const instance = req.body.args.instance;
     request.get(`https://${instance}.salesforce.com/services/data/`, (error, response, body) =>
     {
         if(error){

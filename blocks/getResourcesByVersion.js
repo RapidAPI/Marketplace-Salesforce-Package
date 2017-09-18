@@ -1,14 +1,15 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+//const instance = config.instance;
 const token = config.accessToken; 
 
 
 module.exports.getResourcesByVersion =(req, res) =>{
 
     const args = req.body.args;
-    const version = args.version || config.defultVersion;
-
+    const version = args.version || config.defultVersion;  
+    const instance = args.instance;    
+    
     let r = {
         callback        : "",
         contextWrites   : {}

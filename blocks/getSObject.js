@@ -1,6 +1,6 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+//const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 
@@ -9,6 +9,8 @@ module.exports.getSObject =(req, res) =>{
     
     const args = req.body.args;
     const SOType = args.SOType;
+    const instance = args.instance;    
+    
 
     let r = {
         callback        : "",

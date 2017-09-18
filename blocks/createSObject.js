@@ -1,15 +1,16 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+//const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 
-
+//TODO: check this again
 module.exports.createSObject =(req, res) =>{
     
     const args = req.body.args;
-    const SOName = args.SOName;
     const SOType = args.SOType;
+    const postBodyjson = args.postBodyjson;
+    const instance = args.instance
 
     let r = {
         callback        : "",
@@ -23,7 +24,7 @@ module.exports.createSObject =(req, res) =>{
             "Content-Type" : "application/json"
         },
         url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}`,
-        json:  {"Name": SOName} 
+        json:  postBodyjson
     }
 
     ,function(err, response, body){

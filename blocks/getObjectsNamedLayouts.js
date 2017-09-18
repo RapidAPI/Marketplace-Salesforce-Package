@@ -1,6 +1,6 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+//const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 
@@ -10,7 +10,8 @@ module.exports.getObjectsNamedLayouts=(req, res) =>{
     const args = req.body.args;
     const SOType = args.SOType;
     const namedLayout = args.namedLayout;
-
+    const instance = args.instance;    
+    
     let r = {
         callback        : "",
         contextWrites   : {}

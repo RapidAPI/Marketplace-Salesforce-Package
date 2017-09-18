@@ -1,6 +1,6 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+//const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 
@@ -8,7 +8,7 @@ module.exports.describeGlobal =(req, res) =>{
     
     const args = req.body.args;
     const If_Modified_Since = args.If_Modified_Since;
-
+    const instance = args.instance;
     //TODO: check with flag const If_Modified_Since = 
     let r = {
         callback        : "",

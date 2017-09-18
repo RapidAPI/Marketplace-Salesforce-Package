@@ -1,6 +1,6 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+//const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 
@@ -11,7 +11,8 @@ module.exports.getUpdated=(req, res) =>{
     const SOType = args.SOType;
     const start = args.start;
     const end = args.end;
-
+    const instance = args.instance;    
+    
     let r = {
         callback        : "",
         contextWrites   : {}

@@ -1,17 +1,17 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+//const instance = config.instance;
 const version = config.defultVersion;
 const token = config.accessToken; 
 const baseUrl = config.baseUrl;
 
 
-module.exports =(req, res) =>{
+module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance) =>{
     
     const args = req.body.args;
     const SOName = args.SOName;
     const SOType = args.SOType;
-
+    
     let r = {
         callback        : "",
         contextWrites   : {}
@@ -32,7 +32,7 @@ module.exports =(req, res) =>{
             "Content-Type" : "application/json"
         },
         url: url,
-        json:  {"Name": SOName} 
+        json:  postBodyjson
     }
 
     ,function(err, response, body){

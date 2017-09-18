@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended:true}));
 app.get(`/api/${PACKAGE_NAME}`, require('./metadata.js').do);
 
 //For each block, a POST /api/PACKAGE_NAME/BLOCK_NAME should execute the block
+
+app.post(`/api/${PACKAGE_NAME}/getAccessToken`, require('./blocks/getAccessToken.js').getAccessToken);
+
 app.post(`/api/${PACKAGE_NAME}/getAllVersions`, require('./blocks/getAllVersions.js').versions);
 app.post(`/api/${PACKAGE_NAME}/getResourcesByVersion`,require ('./blocks/getResourcesByVersion.js').getResourcesByVersion);
 app.post(`/api/${PACKAGE_NAME}/getLimits`,require ('./blocks/getLimits.js').limits);
@@ -32,7 +35,10 @@ app.post(`/api/${PACKAGE_NAME}/getObjectsUpdatedRecords`,require ('./blocks/getO
 app.post(`/api/${PACKAGE_NAME}/getObjectsNamedLayouts`,require ('./blocks/getObjectsNamedLayouts.js').getObjectsNamedLayouts);
 app.post(`/api/${PACKAGE_NAME}/getObjectRows`,require ('./blocks/getObjectRows.js').getObjectRows);
 app.post(`/api/${PACKAGE_NAME}/deleteObjectRows`,require ('./blocks/deleteObjectRows.js').deleteObjectRows);
-//TODO: add the Externalid endpoint(get,post,delete,patch,head)
+app.post(`/api/${PACKAGE_NAME}/postObjectRowsByExternalId`,require ('./blocks/postObjectRowsByExternalId.js').postObjectRowsByExternalId);
+app.post(`/api/${PACKAGE_NAME}/getObjectRowsByExternalId`,require ('./blocks/getObjectRowsByExternalId.js').getObjectRowsByExternalId);
+app.post(`/api/${PACKAGE_NAME}/updateObjectRowsByExternalId`,require ('./blocks/updateObjectRowsByExternalId.js').updateObjectRowsByExternalId);
+app.post(`/api/${PACKAGE_NAME}/deleteObjectRowsByExternalId`,require ('./blocks/deleteObjectRowsByExternalId.js').deleteObjectRowsByExternalId);
 app.post(`/api/${PACKAGE_NAME}/getApprovalLayouts`,require ('./blocks/getApprovalLayouts.js').getApprovalLayouts);
 app.post(`/api/${PACKAGE_NAME}/getCompactLayouts`,require ('./blocks/getCompactLayouts.js').getCompactLayouts);
 app.post(`/api/${PACKAGE_NAME}/describeLayouts`,require ('./blocks/describeLayouts.js').describeLayouts);
@@ -40,7 +46,7 @@ app.post(`/api/${PACKAGE_NAME}/getPlatformAction`,require ('./blocks/getPlatform
 app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActions`,require ('./blocks/getObjectsQuickActions.js').getObjectsQuickActions);
 app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActionsDescriptive`,require ('./blocks/getObjectsQuickActionsDescriptive.js').getObjectsQuickActionsDescriptive);
 app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActionsdefaultValues`,require ('./blocks/getObjectsQuickActionsdefaultValues.js').getObjectsQuickActionsdefaultValues);
-app.post(`/api/${PACKAGE_NAME}/POSTObjectsQuickActions`,require ('./blocks/POSTObjectsQuickActions.js').POSTObjectsQuickActions);
+app.post(`/api/${PACKAGE_NAME}/postObjectsQuickActions`,require ('./blocks/postObjectsQuickActions.js').postObjectsQuickActions);
 
 
 

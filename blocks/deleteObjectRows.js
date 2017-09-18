@@ -1,6 +1,6 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+//const instance = config.instance;
 const token = config.accessToken; 
 const version = config.defultVersion;
 
@@ -10,6 +10,8 @@ module.exports.deleteObjectRows =(req,res) =>{
     const args = req.body.args;
     const SOType = args.SOType;
     const id = args.id;
+    const instance = args.instance
+    
 
     let r = {
         callback        : "",
