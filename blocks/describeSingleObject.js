@@ -1,15 +1,16 @@
 const request = require('request');
 const config = require('../config.json');
-const instance = config.instance;
+// const instance = config.instance;
+// const token = config.accessToken; 
 const version = config.defultVersion;
-const token = config.accessToken; 
 
 module.exports.describe=(req, res) =>{
     
     const args = req.body.args;
-    const SOType = args.SOType;
+    const sObjectName = args.sObjectName;
     const instance = args.instance;
-
+    const token = args.token;
+    
     let r = {
         callback        : "",
         contextWrites   : {}
@@ -19,7 +20,7 @@ module.exports.describe=(req, res) =>{
 
     request.get({
         headers:{'Authorization':`Bearer ${token}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}/describe`,
+        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${sObjectName}/describe`,
     }
     ,function(err, response, body){
         if (err) {

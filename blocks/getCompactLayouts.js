@@ -1,12 +1,10 @@
-var tamplate = require('./genericGETTamplete');
+var tamplate = require('../Templates/GETTemplate');
 
 module.exports.getCompactLayouts = (req , res) =>{
-    const args = req.body.args;
-    const SOType = args.SOType;
-    const instance = args.instance;
     
+    const {args : sObjectName ,instance , token } = req.body;
     // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `sobjects/${SOType}/describe/compactLayouts` ,null , instance);
+    return tamplate(req, res, `sobjects/${sObjectName}/describe/compactLayouts` ,null , instance , token);
         
 
 }

@@ -2,15 +2,15 @@ const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
 const version = config.defultVersion;
-const token = config.accessToken; 
+// const token = config.accessToken; 
 
 
 module.exports.getSObject =(req, res) =>{
     
     const args = req.body.args;
-    const SOType = args.SOType;
+    const sObjectName = args.sObjectName;
     const instance = args.instance;    
-    
+    const token = args.token;
 
     let r = {
         callback        : "",
@@ -21,7 +21,7 @@ module.exports.getSObject =(req, res) =>{
 
     request.get({
         headers:{'Authorization':`Bearer ${token}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}`,
+        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${sObjectName}`,
     }
     ,function(err, response, body){
         if (err) {

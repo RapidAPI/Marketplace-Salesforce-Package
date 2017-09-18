@@ -1,19 +1,17 @@
-var tamplate = require('./genericGETTamplete');
+var tamplate = require('../Templates/GETTemplate');
 
 module.exports.describeLayouts = (req , res) =>{
-    const args = req.body.args;
-    const SOType = args.SOType;
-    const recordTypeId = args.recordTypeId;
-    const instance = args.instance;
+
+    const {args : sObjectName ,recordTypeId ,instance , token  } = req.body;
     // tamplate(req ,res ,urlEnding ,urlParams)
-    if(SOType && recordTypeId){
-    return tamplate(req, res, `sobjects/${SOType}/describe/layouts/${recordTypeId}` , null ,instance);
+    if(sObjectName && recordTypeId){
+    return tamplate(req, res, `sobjects/${sObjectName}/describe/layouts/${recordTypeId}` , null ,instance , token);
     }
-    else if(SOType){
-        return tamplate(req, res, `sobjects/${SOType}/describe/layouts`);
+    else if(sObjectName){
+        return tamplate(req, res, `sobjects/${sObjectName}/describe/layouts`),null ,instance , token;
     }
     else{
-        return tamplate(req, res, `sobjects/Global/describe/layouts`);
+        return tamplate(req, res, `sobjects/Global/describe/layouts`,null ,instance , token);
     }
     
 }

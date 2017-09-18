@@ -17,7 +17,7 @@ module.exports.do = function(req, res){
         },
         'blocks'      : [{
             "name":"getAccessToken",
-            "args":[//TODO: edit this fild
+            "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true}
             ],
             "callbacks":[
@@ -40,7 +40,6 @@ module.exports.do = function(req, res){
             "name":"getResourcesByVersion",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
             ],
             "callbacks":[
@@ -53,7 +52,6 @@ module.exports.do = function(req, res){
             "name":"getLimits",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
             ],
             "callbacks":[
@@ -66,7 +64,6 @@ module.exports.do = function(req, res){
             "name":"describeGlobal",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"modifiedSince", type:"string", info:"query only colums moldified within the given range", required: false}                
                 
@@ -95,7 +92,6 @@ module.exports.do = function(req, res){
             "name":"createAccountObject",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"Object name to create", required: true},
                 
@@ -110,7 +106,6 @@ module.exports.do = function(req, res){
             "name":"describeSingleObject",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"modifiedSince", type:"string", info:"query only colums moldified within the given range", required: false}                                
@@ -125,7 +120,6 @@ module.exports.do = function(req, res){
             "name":"getObjectsDeletedRecords",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"start", type:"string", info:"Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.", required: true},
@@ -141,7 +135,6 @@ module.exports.do = function(req, res){
             "name":"getObjectsUpdatedRecords",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"start", type:"string", info:"Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.", required: true},
@@ -157,7 +150,6 @@ module.exports.do = function(req, res){
             "name":"getObjectsNamedLayouts",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"layoutName", type:"string", info:"the layout for for the returned query", required: true},
@@ -173,7 +165,6 @@ module.exports.do = function(req, res){
             "name":"getObjectRows",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"recordId", type:"string", info:"the record id to fetch", required: true},
@@ -189,7 +180,6 @@ module.exports.do = function(req, res){
             "name":"deleteObjectRows",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"recordId", type:"string", info:"the record id to fetch", required: true},
@@ -205,7 +195,6 @@ module.exports.do = function(req, res){
             "name":"updateObjectRows",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"recordId", type:"string", info:"the record id to fetch", required: true},
@@ -222,7 +211,6 @@ module.exports.do = function(req, res){
             "name":"getObjectRowsByExternalId",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the  specified external ID field", required: true},
@@ -239,7 +227,6 @@ module.exports.do = function(req, res){
             "name":"deleteObjectRowsByExternalId",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the  specified external ID field", required: true},
@@ -256,7 +243,6 @@ module.exports.do = function(req, res){
             "name":"updateObjectRowsByExternalId",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the  specified external ID field", required: true},
@@ -273,7 +259,6 @@ module.exports.do = function(req, res){
             "name":"postObjectRowsByExternalId",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the specified external ID field", required: true},
@@ -290,7 +275,6 @@ module.exports.do = function(req, res){
             "name":"getApprovalLayouts",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"approvalProcessName", type:"string", info:"the specified approval Process Name field", required: false}       
@@ -305,7 +289,6 @@ module.exports.do = function(req, res){
             "name":"getCompactLayouts",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true}               
             ],
@@ -319,7 +302,6 @@ module.exports.do = function(req, res){
             "name":"describeLayouts",
             "args":[
                 {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},  
                 {name:"recordTypeId", type:"string", info:"the id for the record type", required: false},  
@@ -330,8 +312,153 @@ module.exports.do = function(req, res){
             ],
             "description":"Returns a list of layouts and descriptions. The list of fields and the layout name are returned."
         },
-        //TODO: continue from getPlatformAction
-            
+        {
+            "name":"getPlatformAction",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"version", type:"string", info:"the api version used", required: true},
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Returns the description of the PlatformAction."
+        },
+        {
+            "name":"getObjectsQuickActions",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Returns a list of specific object’s actions as well as global actions."
+        },
+        {
+            "name":"getObjectsQuickActions",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Return a specific object's action."
+        },
+        {
+            "name":"getObjectsSingleActionDetail",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Return a specific action’s descriptive detail"
+        },
+        {
+            "name":"getObjectsActionsDefaultValues",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Return a specific action’s descriptive detail"
+        },
+        {
+            "name":"getObjectsActionsDefaultValuesById",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true},
+                {name:"contextId", type:"string", info:"the required action to return", required: true}, 
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Return a specific action’s descriptive detail"
+        },
+        {
+            "name":"getRecordsByRelationship",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true},
+                {name:"recordId", type:"string", info:"the record id to fetch", required: true},
+                {name:"relationshipFieldName", type:"string", info:"the name of relationship Field to fetch", required: true},
+                {name:"fields", type:"string", info:"Optional list of fields used to return values for.", required: false}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Return a specific action’s descriptive detail"
+        },
+        {
+            "name":"deleteRecordByRelationship",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true},
+                {name:"contextId", type:"string", info:"the required action to return", required: true}, 
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Deletes record by traversing object relationships via friendly URLs. "
+        },
+        {
+            "name":"updateRecordByRelationship",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true},
+                {name:"contextId", type:"string", info:"the required action to return", required: true}, 
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Updates record by traversing object relationships via friendly URLs."
+        },
+        {
+            "name":"getSugestedArticles",
+            "args":[
+                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true},
+                {name:"contextId", type:"string", info:"the required action to return", required: true}, 
+                //TODO: add fields
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Returns a list of suggested Salesforce Knowledge articles for a case, work order, or work order line item."
+        },
+
     ]
     })
 };

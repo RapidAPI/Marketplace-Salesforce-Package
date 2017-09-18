@@ -1,13 +1,11 @@
-var tamplate = require('./genericGETTamplete');
+var tamplate = require('../Templates/GETTemplate');
 //TODO: check this
 
 module.exports.getObjectsQuickActionsDescriptive = (req , res) =>{
-    const args = req.body.args;
-    const SOType = args.SOType;
-    const action = args.action;
-    const instance = args.instance;        
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `sobjects/PlatformAction.${SOType}/quickActions/${action}/describe` ,null,instance);
+
+    const {args : sObjectName, action, instance , token } = req.body;
+;    // tamplate(req ,res ,urlEnding ,urlParams)
+    return tamplate(req, res, `sobjects/${sObjectName}/quickActions/${action}/describe` ,null, instance , token);
   
 }
 

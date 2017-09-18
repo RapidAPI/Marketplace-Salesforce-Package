@@ -46,7 +46,13 @@ app.post(`/api/${PACKAGE_NAME}/getPlatformAction`,require ('./blocks/getPlatform
 app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActions`,require ('./blocks/getObjectsQuickActions.js').getObjectsQuickActions);
 app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActionsDescriptive`,require ('./blocks/getObjectsQuickActionsDescriptive.js').getObjectsQuickActionsDescriptive);
 app.post(`/api/${PACKAGE_NAME}/getObjectsQuickActionsdefaultValues`,require ('./blocks/getObjectsQuickActionsdefaultValues.js').getObjectsQuickActionsdefaultValues);
+app.post(`/api/${PACKAGE_NAME}/getObjectsActionsDefaultValuesById`,require ('./blocks/getObjectsActionsDefaultValuesById.js').getObjectsActionsDefaultValuesById);
 app.post(`/api/${PACKAGE_NAME}/postObjectsQuickActions`,require ('./blocks/postObjectsQuickActions.js').postObjectsQuickActions);
+app.post(`/api/${PACKAGE_NAME}/getRecordsByRelationship`,require ('./blocks/getRecordsByRelationship.js').getRecordsByRelationship);
+app.post(`/api/${PACKAGE_NAME}/deleteRecordByRelationship`,require ('./blocks/deleteRecordByRelationship.js').deleteRecordByRelationship);
+app.post(`/api/${PACKAGE_NAME}/updateRecordByRelationship`,require ('./blocks/updateRecordByRelationship.js').updateRecordByRelationship);
+
+
 
 
 

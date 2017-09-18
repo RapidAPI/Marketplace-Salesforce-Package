@@ -2,10 +2,11 @@ const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
 const version = config.defultVersion;
-const token = config.accessToken; 
+// const token = config.accessToken; 
 
 module.exports.limits =(req, res) =>{
-    const instance = args.instance;    
+    const instance = req.body.args.instance;
+    const token =  req.body.args.token;    
     request.get({ 
         headers:{'Authorization':`Bearer ${token}`},
         url:`https://${instance}.salesforce.com/services/data/v${version}/limits`}, (error, response, body) =>

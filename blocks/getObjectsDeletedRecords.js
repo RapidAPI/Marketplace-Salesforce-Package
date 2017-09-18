@@ -2,17 +2,18 @@ const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
 const version = config.defultVersion;
-const token = config.accessToken; 
+// const token = config.accessToken; 
 
 //TODO: check this endpoint
 module.exports.getDeleted=(req, res) =>{
     
     const args = req.body.args;
-    const SOType = args.SOType;
+    const sObjectName = args.sObjectName;
     const start = args.start;
     const end = args.end;
     const instance = args.instance;
-
+    const token = args.token;
+    
     let r = {
         callback        : "",
         contextWrites   : {}
@@ -22,7 +23,7 @@ module.exports.getDeleted=(req, res) =>{
 
     request.get({
         headers:{'Authorization':`Bearer ${token}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${SOType}/deleted/?start=${start}end=${end}`,
+        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${sObjectName}/deleted/?start=${start}end=${end}`,
     }
     ,function(err, response, body){
         if (err) {

@@ -1,16 +1,13 @@
 const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
+// const token = config.accessToken; 
 const version = config.defultVersion;
-const token = config.accessToken; 
 const baseUrl = config.baseUrl;
 
+module.exports =(req, res, urlEnding,urlParams , instance , token) =>{
 
-module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace) =>{
-    
     const args = req.body.args;
-    const SOName = args.SOName;
-    const SOType = args.SOType;
 
     let r = {
         callback        : "",
@@ -26,15 +23,10 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace) =>{
         url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}`;
     }
 
-    request.patch({
-        headers:{
-            "Authorization" : `Bearer ${token}`,
-            "Content-Type" : "application/json"
-        },
+    request.delete({
+        headers:{'Authorization':`Bearer ${token}`},
         url: url,
-        json:  postBodyjson 
     }
-
     ,function(err, response, body){
         if (err) {
             r.contextWrites[to] = err;
@@ -46,4 +38,5 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace) =>{
         }
         res.status(200).send(r);
         });
-}   
+}
+        

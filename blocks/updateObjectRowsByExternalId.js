@@ -1,13 +1,8 @@
-var tamplate = require('./genericPATCHTamplate');
+var tamplate = require('../Templates/PATCHTamplate');
 //TODO: check this
 module.exports.updateObjectRowsByExternalId = (req , res) =>{
-    const args = req.body.args;
-    const SOType = args.SOType;
-    const fieldName = args.fieldName;
-    const fieldValue = args.fieldValue;
-    const postBodyjson = args.postBodyjson;
-    const instance = args.instance;    
-    
+
+    const { args : sObjectName ,fieldName , fieldValue , postBodyjson , instance ,contextId  , token} = req.body; 
     // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `sobjects/PlatformAction.${SOType}/${fieldName}/${fieldValue}`,null ,postBodyjson,instance);
+    return tamplate(req, res, `sobjects/${sObjectName}/${fieldName}/${fieldValue}`,null ,postBodyjson,instance, token) ;
 }

@@ -1,11 +1,11 @@
 const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
-const token = config.accessToken; 
+// const token = config.accessToken; 
 const version = config.defultVersion;
 const baseUrl = config.baseUrl;
 
-module.exports =(req, res, urlEnding,urlParams , instance) =>{
+module.exports =(req,res,urlEnding,urlParams , instance , token) =>{
 
     const args = req.body.args;
 
@@ -23,8 +23,8 @@ module.exports =(req, res, urlEnding,urlParams , instance) =>{
         url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}`;
     }
 
-    request.delete({
-        headers:{'Authorization':`Bearer ${token}`},
+    request.get({
+        headers:{"Authorization":`Bearer ${token}`},
         url: url,
     }
     ,function(err, response, body){

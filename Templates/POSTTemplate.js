@@ -1,16 +1,16 @@
 const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
+// const token = config.accessToken; 
 const version = config.defultVersion;
-const token = config.accessToken; 
 const baseUrl = config.baseUrl;
 
 
-module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance) =>{
+module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , token) =>{
     
     const args = req.body.args;
     const SOName = args.SOName;
-    const SOType = args.SOType;
+    const sObjectName = args.sObjectName;
     
     let r = {
         callback        : "",
