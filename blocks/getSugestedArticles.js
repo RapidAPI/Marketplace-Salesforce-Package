@@ -1,6 +1,6 @@
 var tamplate = require('../Templates/GETTemplate');
 //TODO: check this
-module.exports.postObjectRowsByExternalId = (req , res) =>{
+module.exports.getSugestedArticles = (req , res) =>{
 
     const {args : sObjectName ,language  ,articleTypes  , description , subject 
         ,categories ,limit , publishStatus , topics , validationStatus, instance , token} = req.body;
