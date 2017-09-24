@@ -27,6 +27,7 @@ app.post(`/api/${PACKAGE_NAME}/getAllVersions`, require('./blocks/getAllVersions
 app.post(`/api/${PACKAGE_NAME}/getResourcesByVersion`,require ('./blocks/getResourcesByVersion.js').getResourcesByVersion);
 app.post(`/api/${PACKAGE_NAME}/getLimits`,require ('./blocks/getLimits.js').limits);
 app.post(`/api/${PACKAGE_NAME}/describeGlobal`,require ('./blocks/describeGlobal.js').describeGlobal);
+app.post(`/api/${PACKAGE_NAME}/getAccountObjectMetadata`,require ('./blocks/getAccountObjectMetadata.js').getAccountObjectMetadata);
 app.post(`/api/${PACKAGE_NAME}/createSObject`,require ('./blocks/createSObject.js').createSObject);
 app.post(`/api/${PACKAGE_NAME}/getSObject`,require ('./blocks/getSObject.js').getSObject);
 app.post(`/api/${PACKAGE_NAME}/describeSingleObject`,require ('./blocks/describeSingleObject.js').describe);
@@ -51,6 +52,11 @@ app.post(`/api/${PACKAGE_NAME}/postObjectsQuickActions`,require ('./blocks/postO
 app.post(`/api/${PACKAGE_NAME}/getRecordsByRelationship`,require ('./blocks/getRecordsByRelationship.js').getRecordsByRelationship);
 app.post(`/api/${PACKAGE_NAME}/deleteRecordByRelationship`,require ('./blocks/deleteRecordByRelationship.js').deleteRecordByRelationship);
 app.post(`/api/${PACKAGE_NAME}/updateRecordByRelationship`,require ('./blocks/updateRecordByRelationship.js').updateRecordByRelationship);
+app.post(`/api/${PACKAGE_NAME}/getSugestedArticles`,require ('./blocks/getSugestedArticles.js').getSugestedArticles);
+app.post(`/api/${PACKAGE_NAME}/getSuggestedArticlesByRecordId`,require ('./blocks/getSuggestedArticlesByRecordId.js').getSuggestedArticlesByRecordId);
+app.post(`/api/${PACKAGE_NAME}/getUserPasswordInformation`,require ('./blocks/getUserPasswordInformation.js').getUserPasswordInformation);
+
+
 
 
 

@@ -83,7 +83,6 @@ module.exports.do = function(req, res){
             "name":"getAccountObjectMetadata",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true}, 
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
             ],
@@ -321,7 +320,7 @@ module.exports.do = function(req, res){
             "name":"getPlatformAction",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"string", info:"the api version used", required: true},
+                {name:"version", type:"string", info:"the api version used", required: false},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
             ],
             "callbacks":[
@@ -448,14 +447,21 @@ module.exports.do = function(req, res){
             "description":"Updates record by traversing object relationships via friendly URLs."
         },
         {
-            "name":"getSugestedArticles",
+            "name":"getSuggestedArticlesByRecordId",
             "args":[
+                
+                {name:"language", type:"credentials", info:"Language that the article is written in.", required: true},                
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
-                {name:"actionName", type:"string", info:"the required action to return", required: true},
-                {name:"contextId", type:"string", info:"the required action to return", required: true}, 
-                //TODO: add fields
+                {name:"description", type:"string", info:"Text of the description. Valid only for new records without an existing ID and required if subject is null.", required: false},
+                {name:"subject", type:"string", info:"Text of the subject", required: false},                 {name:"subject", type:"string", info:"Text of the subject", required: false}, 
+                {name:"articleTypes", type:"string", info:"Three-character ID prefixes indicating the desired article types", required: false}, 
+                {name:"categories", type:"string", info:"The name of the data category group and the data category API name (not category title) for desired articles.", required: false}, 
+                {name:"limit", type:"string", info:"Specifies the maximum number of suggested articles to return.", required: false}, 
+                {name:"publishStatus", type:"string", info:". The article’s publication status.", required: false}, 
+                {name:"topics", type:"string", info:"The topic of returned articles. ", required: false}, 
+                {name:"validationStatus", type:"string", info:"The validation status of returned articles. ", required: false}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -463,7 +469,44 @@ module.exports.do = function(req, res){
             ],
             "description":"Returns a list of suggested Salesforce Knowledge articles for a case, work order, or work order line item."
         },
-
+        {
+            "name":"getSugestedArticles",
+            "args":[
+                
+                {name:"language", type:"credentials", info:"Language that the article is written in.", required: true},                
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"description", type:"string", info:"Text of the description. Valid only for new records without an existing ID and required if subject is null.", required: false},
+                {name:"subject", type:"string", info:"Text of the subject", required: false},                 {name:"subject", type:"string", info:"Text of the subject", required: false}, 
+                {name:"articleTypes", type:"string", info:"Three-character ID prefixes indicating the desired article types", required: false}, 
+                {name:"categories", type:"string", info:"The name of the data category group and the data category API name (not category title) for desired articles.", required: false}, 
+                {name:"limit", type:"string", info:"Specifies the maximum number of suggested articles to return.", required: false}, 
+                {name:"publishStatus", type:"string", info:". The article’s publication status.", required: false}, 
+                {name:"topics", type:"string", info:"The topic of returned articles. ", required: false}, 
+                {name:"validationStatus", type:"string", info:"The validation status of returned articles. ", required: false}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Returns a list of suggested Salesforce Knowledge articles for a case, work order, or work order line item."
+        },
+        {
+            "name":"getUserPasswordInformation",
+            "args":[
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true},
+                {name:"userId", type:"string", info:"the user id to fetch", required: true}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":" get information about a user password"
+        },
     ]
     })
 };
