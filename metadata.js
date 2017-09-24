@@ -18,13 +18,11 @@ module.exports.do = function(req, res){
         'blocks'      : [{
             "name":"getAccessToken",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"client_id", type:"credentials", info:"client id on salesforce.", required: true},
                 {name:"client_secret", type:"credentials", info:"secret key on salesforce.", required: true},
-                {name:"username", type:"credentials", info:"user name on salesforce.", required: true},
+                {name:"username", type:"credentials", info:"username on salesforce.", required: true},
                 {name:"password", type:"credentials", info:"password on salesforce.", required: true},
-                
-
                 
             ],
             "callbacks":[
@@ -35,7 +33,7 @@ module.exports.do = function(req, res){
         },{
             "name":"getAllVersions",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true}
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -46,7 +44,7 @@ module.exports.do = function(req, res){
         {
             "name":"getResourcesByVersion",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
             ],
             "callbacks":[
@@ -58,7 +56,7 @@ module.exports.do = function(req, res){
         {
             "name":"getLimits",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
             ],
             "callbacks":[
@@ -70,7 +68,7 @@ module.exports.do = function(req, res){
         {
             "name":"describeGlobal",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"modifiedSince", type:"string", info:"query only colums moldified within the given range", required: false}                
                 
@@ -84,7 +82,7 @@ module.exports.do = function(req, res){
         {
             "name":"getAccountObjectMetadata",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"version", type:"string", info:"the api version used", required: true}, 
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
@@ -98,7 +96,7 @@ module.exports.do = function(req, res){
         {
             "name":"createAccountObject",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"Object name to create", required: true},
                 
@@ -112,7 +110,7 @@ module.exports.do = function(req, res){
         {
             "name":"describeSingleObject",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"modifiedSince", type:"string", info:"query only colums moldified within the given range", required: false}                                
@@ -126,7 +124,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectsDeletedRecords",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"start", type:"string", info:"Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.", required: true},
@@ -141,7 +139,7 @@ module.exports.do = function(req, res){
         },       {
             "name":"getObjectsUpdatedRecords",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"start", type:"string", info:"Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.", required: true},
@@ -156,7 +154,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectsNamedLayouts",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"layoutName", type:"string", info:"the layout for for the returned query", required: true},
@@ -171,7 +169,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectRows",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"recordId", type:"string", info:"the record id to fetch", required: true},
@@ -186,7 +184,7 @@ module.exports.do = function(req, res){
         {
             "name":"deleteObjectRows",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"recordId", type:"string", info:"the record id to fetch", required: true},
@@ -201,7 +199,7 @@ module.exports.do = function(req, res){
         {
             "name":"updateObjectRows",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"recordId", type:"string", info:"the record id to fetch", required: true},
@@ -217,7 +215,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectRowsByExternalId",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the  specified external ID field", required: true},
@@ -233,7 +231,7 @@ module.exports.do = function(req, res){
         {
             "name":"deleteObjectRowsByExternalId",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the  specified external ID field", required: true},
@@ -249,7 +247,7 @@ module.exports.do = function(req, res){
         {
             "name":"updateObjectRowsByExternalId",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the  specified external ID field", required: true},
@@ -265,7 +263,7 @@ module.exports.do = function(req, res){
         {
             "name":"postObjectRowsByExternalId",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the specified external ID field", required: true},
@@ -281,7 +279,7 @@ module.exports.do = function(req, res){
         {
             "name":"getApprovalLayouts",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"approvalProcessName", type:"string", info:"the specified approval Process Name field", required: false}       
@@ -295,7 +293,7 @@ module.exports.do = function(req, res){
         {
             "name":"getCompactLayouts",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true}               
             ],
@@ -308,7 +306,7 @@ module.exports.do = function(req, res){
         {
             "name":"describeLayouts",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},  
                 {name:"recordTypeId", type:"string", info:"the id for the record type", required: false},  
@@ -322,7 +320,7 @@ module.exports.do = function(req, res){
         {
             "name":"getPlatformAction",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"version", type:"string", info:"the api version used", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
             ],
@@ -335,7 +333,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectsQuickActions",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true}
             ],
@@ -348,7 +346,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectsQuickActions",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true}
@@ -362,7 +360,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectsSingleActionDetail",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true}
@@ -376,7 +374,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectsActionsDefaultValues",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true}
@@ -390,7 +388,7 @@ module.exports.do = function(req, res){
         {
             "name":"getObjectsActionsDefaultValuesById",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true},
@@ -405,7 +403,7 @@ module.exports.do = function(req, res){
         {
             "name":"getRecordsByRelationship",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true},
@@ -422,7 +420,7 @@ module.exports.do = function(req, res){
         {
             "name":"deleteRecordByRelationship",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true},
@@ -437,7 +435,7 @@ module.exports.do = function(req, res){
         {
             "name":"updateRecordByRelationship",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true},
@@ -452,7 +450,7 @@ module.exports.do = function(req, res){
         {
             "name":"getSugestedArticles",
             "args":[
-                {name:"Instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true},
