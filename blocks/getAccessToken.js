@@ -17,7 +17,7 @@ module.exports.getAccessToken =(req, res) =>{
         headers:{
             "Content-Type" : "application/x-www-form-urlencoded"
         },
-        url: `https://login.salesforce.com/services/oauth2/token`,
+        url: `https://login.salesforce.com/services/oauth2/accessToken`,
         body:  ReqBody
     }
 

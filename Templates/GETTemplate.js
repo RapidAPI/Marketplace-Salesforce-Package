@@ -1,11 +1,11 @@
 const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
-// const token = config.accessToken; 
+// const accessToken = config.accessToken; 
 const version = config.defultVersion;
 const baseUrl = config.baseUrl;
 
-module.exports =(req,res,urlEnding,urlParams , instance , token) =>{
+module.exports =(req,res,urlEnding,urlParams , instance , accessToken) =>{
 
     const args = req.body.args;
 
@@ -24,7 +24,7 @@ module.exports =(req,res,urlEnding,urlParams , instance , token) =>{
     }
 
     request.get({
-        headers:{"Authorization":`Bearer ${token}`},
+        headers:{"Authorization":`Bearer ${accessToken}`},
         url: url,
     }
     ,function(err, response, body){

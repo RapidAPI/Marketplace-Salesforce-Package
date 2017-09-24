@@ -1,7 +1,7 @@
 const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
-// const token = config.accessToken; 
+// const accessToken = config.tocken; 
 const version = config.defultVersion;
 
 module.exports.describeGlobal =(req, res) =>{
@@ -9,7 +9,7 @@ module.exports.describeGlobal =(req, res) =>{
     const args = req.body.args;
     const If_Modified_Since = args.If_Modified_Since;
     const instance = args.instance;
-    const token = args.token;
+    const accessToken = args.accessToken;
     //TODO: check with flag const If_Modified_Since = 
     let r = {
         callback        : "",
@@ -19,11 +19,11 @@ module.exports.describeGlobal =(req, res) =>{
     let to = args.to || "to";
     let header = {};
     if(If_Modified_Since){
-        header = {'Authorization':`Bearer ${token}`,
+        header = {'Authorization':`Bearer ${accessToken}`,
                 'If_Modified_Since':If_Modified_Since };
     }
     else{
-        header = {'Authorization':`Bearer ${token}`};
+        header = {'Authorization':`Bearer ${accessToken}`};
     }
     // make the request
     request.get({

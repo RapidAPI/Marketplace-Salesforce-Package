@@ -1,12 +1,12 @@
 const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
-// const token = config.accessToken; 
+// const accessToken = config.accessToken; 
 const version = config.defultVersion;
 const baseUrl = config.baseUrl;
 
 
-module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace , token) =>{
+module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace , accessToken) =>{
     
     const args = req.body.args;
     const SOName = args.SOName;
@@ -28,7 +28,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace , token) =>
 
     request.patch({
         headers:{
-            "Authorization" : `Bearer ${token}`,
+            "Authorization" : `Bearer ${accessToken}`,
             "Content-Type" : "application/json"
         },
         url: url,

@@ -1,7 +1,7 @@
 const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
-// const token = config.accessToken; 
+// const accessToken = config.tocken; 
 const version = config.defultVersion;
 
 //TODO: check this again
@@ -11,7 +11,7 @@ module.exports.createSObject =(req, res) =>{
     const sObjectName = args.sObjectName;
     const postBodyjson = args.postBodyjson;
     const instance = args.instance
-    const token = args.token;
+    const accessToken = args.accessToken;
     let r = {
         callback        : "",
         contextWrites   : {}
@@ -20,7 +20,7 @@ module.exports.createSObject =(req, res) =>{
     let to = args.to || "to";
     request.post({
         headers:{
-            "Authorization" : `Bearer ${token}`,
+            "Authorization" : `Bearer ${accessToken}`,
             "Content-Type" : "application/json"
         },
         url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${sObjectName}`,

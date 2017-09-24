@@ -2,7 +2,7 @@ const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
 const version = config.defultVersion;
-// const token = config.accessToken; 
+// const accessToken = config.accessToken; 
 
 //TODO: check this endpoint
 module.exports.getUpdated=(req, res) =>{
@@ -12,7 +12,7 @@ module.exports.getUpdated=(req, res) =>{
     const start = args.start;
     const end = args.end;
     const instance = args.instance;    
-    const token = args.token;
+    const accessToken = args.accessToken;
     
     let r = {
         callback        : "",
@@ -22,7 +22,7 @@ module.exports.getUpdated=(req, res) =>{
     let to = args.to || "to";
 
     request.get({
-        headers:{'Authorization':`Bearer ${token}`},
+        headers:{'Authorization':`Bearer ${accessToken}`},
         url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${sObjectName}/deleted/?start=${start}end=${end}`,
     }
     ,function(err, response, body){

@@ -2,7 +2,7 @@ const request = require('request');
 const config = require('../config.json');
 //const instance = config.instance;
 const version = config.defultVersion;
-// const token = config.accessToken; 
+// const accessToken = config.tocken; 
 
 //TODO: check this endpoint
 module.exports.getObjectsNamedLayouts=(req, res) =>{
@@ -11,7 +11,7 @@ module.exports.getObjectsNamedLayouts=(req, res) =>{
     const sObjectName = args.sObjectName;
     const namedLayout = args.namedLayout;
     const instance = args.instance;    
-    const token = args.token;
+    const accessToken = args.accessToken;
     
     let r = {
         callback        : "",
@@ -21,7 +21,7 @@ module.exports.getObjectsNamedLayouts=(req, res) =>{
     let to = args.to || "to";
 
     request.get({
-        headers:{'Authorization':`Bearer ${token}`},
+        headers:{'Authorization':`Bearer ${accessToken}`},
         url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${sObjectName}/describe/namedLayouts/${namedLayout}`,
     }
     ,function(err, response, body){
