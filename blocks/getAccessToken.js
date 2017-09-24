@@ -5,8 +5,8 @@ const config = require('../config.json');
 module.exports.getAccessToken =(req, res) =>{
     
     const args = req.body;
-    const {args: {username , password}} = req.body;
-    const ReqBody = `grant_type=${config.grant_type}&client_id=${config.client_id}&client_secret=${config.client_secret}&username=${username}&password=${password}`
+    const {args: {client_id ,client_secret, username , password}} = req.body;
+    const ReqBody = `grant_type=${config.grant_type}&client_id=${client_id}&client_secret=${client_secret}&username=${username}&password=${password}`
     let r = {
         callback        : "",
         contextWrites   : {}
