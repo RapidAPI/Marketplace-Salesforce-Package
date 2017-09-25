@@ -93,12 +93,12 @@ module.exports.do = function(req, res){
             "description":"Retrieve the metadata for the Account object using the GET method."
         },
         {
-            "name":"createAccountObject",
+            "name":"createSObject",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"Object name to create", required: true},
-                
+                {name:"jsonbody", type:"string", info:"json formated body for new object to be created", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -266,7 +266,9 @@ module.exports.do = function(req, res){
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"string", info:"the specified external ID field", required: true},
-                {name:"fieldValue", type:"string", info:"the value for the object.", required: true}
+                {name:"fieldValue", type:"string", info:"the value for the object.", required: true},
+                {name:"jsonbody", type:"string", info:"json formated body for new object to be created", required: true}
+                
                 
             ],
             "callbacks":[
@@ -334,7 +336,8 @@ module.exports.do = function(req, res){
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
-                {name:"accessToken", type:"string", info:"Oath acces token", required: true}
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: false}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -342,19 +345,21 @@ module.exports.do = function(req, res){
             ],
             "description":"Returns a list of specific object’s actions as well as global actions."
         },
+        
         {
-            "name":"getObjectsQuickActions",
+            "name":"postObjectsQuickActions",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
-                {name:"actionName", type:"string", info:"the required action to return", required: true}
+                {name:"actionName", type:"string", info:"the required action to return", required: false},
+                {name:"jsonbody", type:"string", info:"json formated body for new object to be created", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
                 {name:"error", info:"Error"}
             ],
-            "description":"Return a specific object's action."
+            "description":"Return a specific object's action.15"
         },
         {
             "name":"getObjectsSingleActionDetail",
@@ -496,7 +501,6 @@ module.exports.do = function(req, res){
             "name":"getUserPasswordInformation",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"actionName", type:"string", info:"the required action to return", required: true},
                 {name:"userId", type:"string", info:"the user id to fetch", required: true}
@@ -506,6 +510,32 @@ module.exports.do = function(req, res){
                 {name:"error", info:"Error"}
             ],
             "description":" get information about a user password"
+        },        {
+            "name":"setUserPassword",
+            "args":[
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"userId", type:"string", info:"the user id to fetch", required: true},
+                {name:"newPassword", type:"string", info:"the user id to fetch", required: true}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":" Sets user password."
+        },        {
+            "name":"resetUserPassword",
+            "args":[
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
+                {name:"actionName", type:"string", info:"the required action to return", required: true},
+                {name:"userId", type:"string", info:"the user id to fetch", required: true}
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":" Resets the user password."
         },
     ]
     })

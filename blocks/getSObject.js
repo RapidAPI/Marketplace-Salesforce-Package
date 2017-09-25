@@ -1,8 +1,6 @@
 const request = require('request');
 const config = require('../config.json');
-//const instance = config.instance;
 const version = config.defultVersion;
-// const accessToken = config.accessToken; 
 
 
 module.exports.getSObject =(req, res) =>{

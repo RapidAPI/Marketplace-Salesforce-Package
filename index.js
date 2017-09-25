@@ -55,6 +55,24 @@ app.post(`/api/${PACKAGE_NAME}/updateRecordByRelationship`,require ('./blocks/up
 app.post(`/api/${PACKAGE_NAME}/getSugestedArticles`,require ('./blocks/getSugestedArticles.js').getSugestedArticles);
 app.post(`/api/${PACKAGE_NAME}/getSuggestedArticlesByRecordId`,require ('./blocks/getSuggestedArticlesByRecordId.js').getSuggestedArticlesByRecordId);
 app.post(`/api/${PACKAGE_NAME}/getUserPasswordInformation`,require ('./blocks/getUserPasswordInformation.js').getUserPasswordInformation);
+app.post(`/api/${PACKAGE_NAME}/getPlatformEventByName`,require ('./blocks/getPlatformEventByName.js').getPlatformEventByName);
+app.post(`/api/${PACKAGE_NAME}/getPlatformEventBySchemaId`,require ('./blocks/getPlatformEventBySchemaId.js').getPlatformEventBySchemaId);
+app.post(`/api/${PACKAGE_NAME}/getSalesforceAppDropDownItems`,require ('./blocks/getSalesforceAppDropDownItems.js').getSalesforceAppDropDownItems);
+app.post(`/api/${PACKAGE_NAME}/getSalesforceNavMenuItems`,require ('./blocks/getSalesforceNavMenuItems.js').getSalesforceNavMenuItems);
+app.post(`/api/${PACKAGE_NAME}/getCompactLayouts`,require ('./blocks/getCompactLayouts.js').getCompactLayouts);
+app.post(`/api/${PACKAGE_NAME}/getListActionsTypes`,require ('./blocks/getListActionsTypes.js').getListActionsTypes);
+app.post(`/api/${PACKAGE_NAME}/postToStandardAction`,require ('./blocks/postToStandardAction.js').postToStandardAction);
+app.post(`/api/${PACKAGE_NAME}/postToCustomAction`,require ('./blocks/postToCustomAction.js').postToCustomAction);
+app.post(`/api/${PACKAGE_NAME}/getStandardActions`,require ('./blocks/getStandardActions.js').getStandardActions);
+app.post(`/api/${PACKAGE_NAME}/getCustomActions`,require ('./blocks/getCustomActions.js').getCustomActions);
+app.post(`/api/${PACKAGE_NAME}/describeListView`,require ('./blocks/describeListView.js').describeListView);
+app.post(`/api/${PACKAGE_NAME}/getListViewResults`,require ('./blocks/getListViewResults.js').getListViewResults);
+app.post(`/api/${PACKAGE_NAME}/getListViews`,require ('./blocks/getListViews.js').getListViews);
+app.post(`/api/${PACKAGE_NAME}/getDataCategoryGroups`,require ('./blocks/getDataCategoryGroups.js').getDataCategoryGroups);
+
+
+
+
 
 
 
