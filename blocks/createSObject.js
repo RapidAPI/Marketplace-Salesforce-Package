@@ -7,7 +7,7 @@ module.exports.createSObject =(req, res) =>{
     
     const args = req.body.args;
     const sObjectName = args.sObjectName;
-    const postBodyjson = args.postBodyjson;
+    const inputs = args.inputs;
     const instance = args.instance
     const accessToken = args.accessToken;
     let r = {

@@ -69,6 +69,30 @@ app.post(`/api/${PACKAGE_NAME}/describeListView`,require ('./blocks/describeList
 app.post(`/api/${PACKAGE_NAME}/getListViewResults`,require ('./blocks/getListViewResults.js').getListViewResults);
 app.post(`/api/${PACKAGE_NAME}/getListViews`,require ('./blocks/getListViews.js').getListViews);
 app.post(`/api/${PACKAGE_NAME}/getDataCategoryGroups`,require ('./blocks/getDataCategoryGroups.js').getDataCategoryGroups);
+app.post(`/api/${PACKAGE_NAME}/getDataCategoryDetail`,require ('./blocks/getDataCategoryDetail.js').getDataCategoryDetail);
+app.post(`/api/${PACKAGE_NAME}/parameterizedSearch`,require ('./blocks/parameterizedSearch.js').parameterizedSearch);
+app.post(`/api/${PACKAGE_NAME}/getProcessApprovals`,require ('./blocks/getProcessApprovals.js').getProcessApprovals);
+app.post(`/api/${PACKAGE_NAME}/submitRecordForApproval`,require ('./blocks/submitRecordForApproval.js').submitRecordForApproval);
+app.post(`/api/${PACKAGE_NAME}/getAllWorkflowRules`,require ('./blocks/getAllWorkflowRules.js').getAllWorkflowRules);
+app.post(`/api/${PACKAGE_NAME}/getStandardActions`,require ('./blocks/getStandardActions.js').getStandardActions);
+app.post(`/api/${PACKAGE_NAME}/triggerProcessRules`,require ('./blocks/triggerProcessRules.js').triggerProcessRules);
+app.post(`/api/${PACKAGE_NAME}/Query`,require ('./blocks/Query.js').Query);
+app.post(`/api/${PACKAGE_NAME}/explainQuery`,require ('./blocks/explainQuery.js').explainQuery);
+app.post(`/api/${PACKAGE_NAME}/additionalQueryResults`,require ('./blocks/additionalQueryResults.js').additionalQueryResults);
+app.post(`/api/${PACKAGE_NAME}/queryAll`,require ('./blocks/queryAll.js').queryAll);
+app.post(`/api/${PACKAGE_NAME}/additionalQueryAll`,require ('./blocks/additionalQueryAll.js').additionalQueryAll);
+app.post(`/api/${PACKAGE_NAME}/getQuickActions`,require ('./blocks/getQuickActions.js').getQuickActions);
+app.post(`/api/${PACKAGE_NAME}/postQuickAction`,require ('./blocks/postQuickAction.js').postQuickAction);
+app.post(`/api/${PACKAGE_NAME}/getRecentListViews`,require ('./blocks/getRecentListViews.js').getRecentListViews);
+app.post(`/api/${PACKAGE_NAME}/getRecentlyViewedItems`,require ('./blocks/getRecentlyViewedItems.js').getRecentlyViewedItems);
+app.post(`/api/${PACKAGE_NAME}/getRecordCount`,require ('./blocks/getRecordCount.js').getRecordCount);
+
+
+
+
+
+
+
 
 
 

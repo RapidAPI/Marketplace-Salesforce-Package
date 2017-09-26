@@ -2,7 +2,7 @@
 
 module.exports.do = function(req, res){
     res.status(200).send({
-        'package': 'salesforce',
+        "package": 'salesforce',
         "tagline": "interact with salseforce",
         "description": "salesforce provides companies with an interface for case management and task management, and a system for automatically routing and escalating important events.",
         "image": "", //TODO: add image
@@ -98,7 +98,7 @@ module.exports.do = function(req, res){
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"string", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"string", info:"Object name to create", required: true},
-                {name:"jsonbody", type:"string", info:"json formated body for new object to be created", required: true}
+                {name:"inputs", type:"string", info:"json formated body for new object to be created", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},

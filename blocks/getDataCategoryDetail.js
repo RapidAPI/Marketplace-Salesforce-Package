@@ -1,14 +1,16 @@
 var tamplate = require('../Templates/GETTemplate');
 //TODO: check this
-module.exports.getListViewResults = (req , res) =>{
-   
-    const {args: sObjectName, group ,category ,instance, accessToken } = req.body;
+module.exports.getDataCategoryDetail = (req , res) =>{
+
+    const {args : sObjectName ,articleId  ,channel  , updateViewStat , subject ,RecordID
+        ,categories ,limit , publishStatus , topics , validationStatus, instance , accessToken} = req.body;
+        let urlEnding = `?language=${language}`;
+        if(channel){
+            urlEnding.concat(`&channel=${channel}`);
+        }   
+        if(updateViewStat){
+            urlEnding.concat(`&updateViewStat=${updateViewStat}`);
+        }
+       
     // tamplate(req ,res ,urlEnding ,urlParams)
-    if(sObjectName){
-        return tamplate(req, res, `/support/dataCategoryGroups/${group}/dataCategories/${category}`,`?sObjectName=${sObjectName}`, instance, accessToken);
-    }
-    else{
-        return tamplate(req, res, `/support/dataCategoryGroups/${group}/dataCategories/${category}`,null, instance, accessToken);        
-    }
-    
-}
+    return tamplate(req, res, `support/knowledgeArticles/${articleId}`,urlEnding ,instance , accessToken)};
