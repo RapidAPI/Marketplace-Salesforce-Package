@@ -1,4 +1,6 @@
 const request = require('request');
+const config = require('../config.json');
+
 const version = config.defultVersion;
 
 module.exports.describe=(req, res) =>{

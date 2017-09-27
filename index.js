@@ -96,6 +96,7 @@ app.post(`/api/${PACKAGE_NAME}/searchSuggestedQueries`,require ('./blocks/search
 app.post(`/api/${PACKAGE_NAME}/searchSuggestedArticleTitleMatches`,require ('./blocks/searchResultsLayouts.js').searchResultsLayouts);
 app.post(`/api/${PACKAGE_NAME}/getTabs`,require ('./blocks/getTabs.js').getTabs);
 app.post(`/api/${PACKAGE_NAME}/getThemes`,require ('./blocks/getThemes.js').getThemes);
+app.post(`/api/${PACKAGE_NAME}/getArticleDetails`,require ('./blocks/getArticleDetails.js').getArticleDetails);
 
 
 
