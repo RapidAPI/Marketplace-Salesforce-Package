@@ -2,7 +2,6 @@ const request = require('request');
 const config = require('../config.json');
 const version = config.defultVersion;
 
-//TODO: check this again
 module.exports.createSObject =(req, res) =>{
     
     const args = req.body.args;

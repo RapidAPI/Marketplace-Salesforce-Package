@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: check this
 
 module.exports.getObjectsQuickActionsdefaultValues = (req , res) =>{
   

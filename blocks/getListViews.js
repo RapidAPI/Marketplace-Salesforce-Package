@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: check this
 module.exports.getListViews = (req , res) =>{
    
     const {args: sObjectType,listViewId  ,instance, accessToken } = req.body;

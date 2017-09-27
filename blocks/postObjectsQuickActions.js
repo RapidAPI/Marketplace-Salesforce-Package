@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/POSTTemplate');
-//TODO: check this
 module.exports.postObjectsQuickActions = (req , res) =>{
  
     const {args : sObjectName ,  action , inputs ,instance , accessToken } = req.body;

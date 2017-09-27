@@ -1,6 +1,4 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: check this
-
 module.exports.getObjectsQuickActionsDescriptive = (req , res) =>{
 
     const {args : sObjectName, action, instance , accessToken } = req.body;

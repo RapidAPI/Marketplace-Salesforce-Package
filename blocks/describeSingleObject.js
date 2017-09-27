@@ -1,7 +1,4 @@
 const request = require('request');
-const config = require('../config.json');
-// const instance = config.instance;
-// const accessToken = config.tocken; 
 const version = config.defultVersion;
 
 module.exports.describe=(req, res) =>{

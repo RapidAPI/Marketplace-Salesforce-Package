@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/POSTTemplate.js');
-//TODO: check this
 
 module.exports.getUserPasswordInformation = (req , res) =>{
 

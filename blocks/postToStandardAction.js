@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/POSTTemplate');
-//TODO: check this
 module.exports.postToStandardAction = (req , res) =>{
 
     const {args :   actionName, inputs , instance , accessToken} = req.body;

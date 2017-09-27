@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/PATCHTamplate');
-//TODO: check this
 
 module.exports.updateRecordByRelationship = (req , res) =>{
     

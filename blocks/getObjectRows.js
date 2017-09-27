@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: not working! check again
 module.exports.getObjectRows = (req , res) =>{
      
     const {args: id , fields , sObjectName,instance , accessToken } = req.body;

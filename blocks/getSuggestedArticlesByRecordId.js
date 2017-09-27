@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: check this
 module.exports.getSuggestedArticlesByRecordId = (req , res) =>{
 
     const {args : sObjectName ,language  ,articleTypes  , description , subject ,RecordID

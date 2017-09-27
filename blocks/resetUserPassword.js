@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/DELETETemplate.js');
-//TODO: check this
 
 module.exports.getUserPasswordInformation = (req , res) =>{
   

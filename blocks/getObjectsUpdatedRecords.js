@@ -1,10 +1,7 @@
 const request = require('request');
 const config = require('../config.json');
-//const instance = config.instance;
 const version = config.defultVersion;
-// const accessToken = config.accessToken; 
 
-//TODO: check this endpoint
 module.exports.getUpdated=(req, res) =>{
     
     const args = req.body.args;

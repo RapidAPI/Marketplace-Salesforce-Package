@@ -1,6 +1,4 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: check this
-
 module.exports.getObjectsActionsDefaultValuesById = (req , res) =>{
 
     const {args:  sObjectName , action ,instance , contextId , accessToken } = req.body;

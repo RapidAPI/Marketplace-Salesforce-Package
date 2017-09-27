@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/POSTTemplate');
-//TODO: check this
 module.exports.parameterizedSearch = (req , res) =>{
         const args = req.body;
         let postJsonBody = {q : args.query};

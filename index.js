@@ -86,6 +86,17 @@ app.post(`/api/${PACKAGE_NAME}/postQuickAction`,require ('./blocks/postQuickActi
 app.post(`/api/${PACKAGE_NAME}/getRecentListViews`,require ('./blocks/getRecentListViews.js').getRecentListViews);
 app.post(`/api/${PACKAGE_NAME}/getRecentlyViewedItems`,require ('./blocks/getRecentlyViewedItems.js').getRecentlyViewedItems);
 app.post(`/api/${PACKAGE_NAME}/getRecordCount`,require ('./blocks/getRecordCount.js').getRecordCount);
+app.post(`/api/${PACKAGE_NAME}/getRelevantItems`,require ('./blocks/getRelevantItems.js').getRelevantItems);
+app.post(`/api/${PACKAGE_NAME}/getKnowledgeLanguageSettings`,require ('./blocks/getKnowledgeLanguageSettings.js').getKnowledgeLanguageSettings);
+app.post(`/api/${PACKAGE_NAME}/search`,require ('./blocks/search.js').search);
+app.post(`/api/${PACKAGE_NAME}/searchScopeOrder`,require ('./blocks/searchScopeOrder.js').searchScopeOrder);
+app.post(`/api/${PACKAGE_NAME}/searchResultsLayouts`,require ('./blocks/searchResultsLayouts.js').searchResultsLayouts);
+app.post(`/api/${PACKAGE_NAME}/searchSuggestedRecords`,require ('./blocks/searchResultsLayouts.js').searchResultsLayouts);
+app.post(`/api/${PACKAGE_NAME}/searchSuggestedQueries`,require ('./blocks/searchResultsLayouts.js').searchResultsLayouts);
+app.post(`/api/${PACKAGE_NAME}/searchSuggestedArticleTitleMatches`,require ('./blocks/searchResultsLayouts.js').searchResultsLayouts);
+app.post(`/api/${PACKAGE_NAME}/getTabs`,require ('./blocks/getTabs.js').getTabs);
+app.post(`/api/${PACKAGE_NAME}/getThemes`,require ('./blocks/getThemes.js').getThemes);
+
 
 
 

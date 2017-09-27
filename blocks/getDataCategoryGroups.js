@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: check this
 module.exports.getDataCategoryGroups = (req , res) =>{
    
     const {args: sObjectName,topCategoriesOnly  ,instance, accessToken } = req.body;

@@ -1,15 +1,14 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: check this
 module.exports.getSugestedArticles = (req , res) =>{
 
-    const {args : sObjectName ,language  ,articleTypes  , description , subject 
-        ,categories ,limit , publishStatus , topics , validationStatus, instance , accessToken} = req.body;
-        let urlEnding = `?language=${language}`;
-        if(articleTypes){
-            urlEnding.concat(`&articleTypes=${articleTypes}`);
+    const {args : query,channel ,subject ,categories , queryMethod,
+         sort, order, pageSize,pageNumber , instance , accessToken} = req.body;
+        let urlEnding = "";
+        if(query){
+            urlEnding.concat(`&query=${query}`);
         }   
-        if(description){
-            urlEnding.concat(`&description=${description}`);
+        if(channel){
+            urlEnding.concat(`&channel=${channel}`);
         }
         if(subject){
             urlEnding.concat(`&subject=${subject}`);
@@ -17,17 +16,20 @@ module.exports.getSugestedArticles = (req , res) =>{
         if(categories){
             urlEnding.concat(`&categories=${categories}`);
         }
-        if(limit){
-            urlEnding.concat(`&limit=${limit}`);
+        if(queryMethod){
+            urlEnding.concat(`&queryMethod=${queryMethod}`);
         }
-        if(publishStatus){
-            urlEnding.concat(`&publishStatus=${publishStatus}`);
+        if(sort){
+            urlEnding.concat(`&sort=${sort}`);
         }
-        if(topics){
-            urlEnding.concat(`&topics=${topics}`);
+        if(order){
+            urlEnding.concat(`&order=${order}`);
         }
-        if(validationStatus){
-            urlEnding.concat(`&validationStatus=${validationStatus}`);
+        if(pageSize){
+            urlEnding.concat(`&pageSize=${pageSize}`);
+        }
+        if(pageNumber){
+            urlEnding.concat(`&pageNumber=${pageNumber}`);
         }
 
     // tamplate(req ,res ,urlEnding ,urlParams)

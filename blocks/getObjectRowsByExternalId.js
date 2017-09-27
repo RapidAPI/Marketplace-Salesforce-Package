@@ -1,5 +1,4 @@
 var tamplate = require('../Templates/GETTemplate');
-//TODO: check this
 module.exports.getObjectRowsByExternalId = (req , res) =>{
    
     const {args: sObjectName ,fieldName , fieldValue ,instance, accessToken } = req.body;

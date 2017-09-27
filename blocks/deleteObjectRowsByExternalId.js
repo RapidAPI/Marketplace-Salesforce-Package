@@ -1,5 +1,5 @@
 var tamplate = require('../Templates/DELETETemplate.js');
-//TODO: check this
+
 module.exports.deleteObjectRowsByExternalId = (req , res) =>{
     
     const {args: sObjectName ,fieldName ,fieldValue , instance , accessToken} = req.body;

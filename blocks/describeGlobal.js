@@ -1,7 +1,5 @@
 const request = require('request');
 const config = require('../config.json');
-//const instance = config.instance;
-// const accessToken = config.tocken; 
 const version = config.defultVersion;
 
 module.exports.describeGlobal =(req, res) =>{
@@ -20,7 +18,7 @@ module.exports.describeGlobal =(req, res) =>{
     let header = {};
     if(If_Modified_Since){
         header = {'Authorization':`Bearer ${accessToken}`,
-                'If_Modified_Since':If_Modified_Since };
+                'If-Modified-Since':If_Modified_Since };
     }
     else{
         header = {'Authorization':`Bearer ${accessToken}`};
