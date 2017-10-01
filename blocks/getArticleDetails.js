@@ -1,7 +1,7 @@
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.getArticleDetails = (req , res) =>{
-    const {args : articleId, channel ,updateViewStat , instance , accessToken} = req.body;
+module.exports = (req , res  , template) =>{
+    const {args : {articleId, channel ,updateViewStat , instance , accessToken}} = req.body;
         let urlEnding = `?articleId=${articleId}`;
         if(channel){
             urlEnding.concat(`&channel=${channel}`);
@@ -10,7 +10,7 @@ module.exports.getArticleDetails = (req , res) =>{
             urlEnding.concat(`&updateViewStat=${updateViewStat}`);
         }
 
-    // tamplate(req ,res ,urlEnding ,urlParams)
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
     
-    return tamplate(req, res, `/support/knowledgeArticles`,urlEnding ,instance , accessToken);
+    return template (req, res, `/support/knowledgeArticles`,urlEnding ,instance , accessToken);
 }

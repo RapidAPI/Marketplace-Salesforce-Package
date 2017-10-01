@@ -1,10 +1,10 @@
-var tamplate = require('../Templates/GETTemplate');
-
-module.exports.getStandardActions = (req , res) =>{
  
-    const {args : sObjectName ,workflowRuleId , instance , accessToken} = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    url = `actions/standard`;
+
+module.exports = (req , res  , template) =>{
+ 
+    const {args : {sObjectName ,workflowRuleId , instance , accessToken}} = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    url = `process/rules`;
     if(sObjectName){
         if(workflowRuleId){
             url.concat(`${sObjectName}/${workflowRuleId}`);
@@ -13,7 +13,7 @@ module.exports.getStandardActions = (req , res) =>{
             url.concat(sObjectName);
         }
     }
-    return tamplate(req, res,url , null,instance , accessToken);
+    return template (req, res,url , null,instance , accessToken);
 
 }
 

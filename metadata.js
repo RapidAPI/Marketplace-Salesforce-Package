@@ -365,20 +365,6 @@ module.exports.do = function(req, res){
             "description":"Return a specific object's action.15"
         },
         {
-            "name":"getObjectsSingleActionDetail",
-            "args":[
-                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
-                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
-                {name:"actionName", type:"string", info:"the required action to return", required: true}
-            ],
-            "callbacks":[
-                {name:"success", info:"Success"},
-                {name:"error", info:"Error"}
-            ],
-            "description":"Return a specific action’s descriptive detail"
-        },
-        {
             "name":"getObjectsActionsDefaultValues",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
@@ -710,20 +696,6 @@ module.exports.do = function(req, res){
             "description":"Returns the list of list views for the specified sObject, including the ID and other basic information about each list view."
         },
          {
-            "name":"getSingleListView",
-            "args":[
-                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
-                {name:"sObjectType", type:"string", info:"the type of object", required: true},
-                {name:"listViewId", type:"string", info:"the view id to fetch", required: true}
-            ],
-            "callbacks":[
-                {name:"success", info:"Success"},
-                {name:"error", info:"Error"}
-            ],
-            "description":" Get a list of all available custom actions."
-        },
-         {
             "name":"getDataCategoryGroups",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
@@ -846,33 +818,6 @@ module.exports.do = function(req, res){
                 {name:"error", info:"Error"}
             ],
             "description":" Returns a list of all active workflow rules."
-        },
-         {
-            "name":"getSingleProcessRule",
-            "args":[
-                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
-                {name:"sObjectName", type:"string", info:"the SObject required", required: false},                  
-                {name:"workflowRuleId", type:"string", info:"", required: true}
-            ],
-            "callbacks":[
-                {name:"success", info:"Success"},
-                {name:"error", info:"Error"}
-            ],
-            "description":"Get the metadata for a particular process rule."
-        },
-         {
-            "name":"getProcessRulesByObject",
-            "args":[
-                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"accessToken", type:"string", info:"Oath acces token", required: true},
-                {name:"sObjectName", type:"string", info:"the SObject required", required: false}
-            ],
-            "callbacks":[
-                {name:"success", info:"Success"},
-                {name:"error", info:"Error"}
-            ],
-            "description":"Get the process rules for a particular object."
         },
          {
             "name":"triggerProcessRules",

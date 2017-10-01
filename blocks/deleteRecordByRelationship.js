@@ -1,9 +1,9 @@
-var tamplate = require('../Templates/DELETETemplate.js');
+ 
 
-module.exports.deleteRecordByRelationship = (req , res) =>{
+module.exports = (req , res  , template) =>{
   
-    const {args : sObjectName, recordId , relationshipFieldName ,instance , accessToken } = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `sobjects/${sObjectName}/${relationshipFieldName}`,`?fields=${fields}`,instance , accessToken );
+    const {args :{ sObjectName, recordId , relationshipFieldName ,instance , accessToken} } = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res, `sobjects/${sObjectName}/${relationshipFieldName}`,`?fields=${fields}`,instance , accessToken );
    
 }

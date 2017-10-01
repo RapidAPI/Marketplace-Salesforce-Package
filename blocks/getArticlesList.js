@@ -1,8 +1,8 @@
-var tamplate = require('../Templates/GETTemplate');
-module.exports.getSugestedArticles = (req , res) =>{
+ 
+module.exports = (req , res  , template) =>{
 
-    const {args : query,channel ,subject ,categories , queryMethod,
-         sort, order, pageSize,pageNumber , instance , accessToken} = req.body;
+    const {args : {query,channel ,subject ,categories , queryMethod,
+         sort, order, pageSize,pageNumber , instance , accessToken}} = req.body;
         let urlEnding = "";
         if(query){
             urlEnding.concat(`&query=${query}`);
@@ -32,7 +32,6 @@ module.exports.getSugestedArticles = (req , res) =>{
             urlEnding.concat(`&pageNumber=${pageNumber}`);
         }
 
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    
-    return tamplate(req, res, `/support/knowledgeArticles`,urlEnding ,instance , accessToken);
+        //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res, `/support/knowledgeArticles`,urlEnding ,instance , accessToken);
 }

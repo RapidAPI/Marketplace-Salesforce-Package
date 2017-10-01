@@ -1,10 +1,10 @@
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.getCompactLayouts = (req , res) =>{
+module.exports = (req , res  , template) =>{
     
-    const {args : objects ,instance , accessToken } = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `compactLayouts` ,`q?objects` , instance , accessToken);
+    const {args : {objects ,instance , accessToken} } = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res, `compactLayouts` ,`q?objects` , instance , accessToken);
         
 
 }

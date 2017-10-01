@@ -1,12 +1,12 @@
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.getObjectsQuickActions = (req , res) =>{
+module.exports = (req , res  , template) =>{
 
-    const {args : sObjectName, actionName, instance , accessToken } = req.body;
+    const {args : {sObjectName, actionName, instance , accessToken} } = req.body;
     if(actionName){
-        return tamplate(req, res, `sobjects/${sObjectName}/quickActions/${actionName}` ,null,instance , accessToken);
+        return template (req, res, `sobjects/${sObjectName}/quickActions/${actionName}` ,null,instance , accessToken);
     }
     else{
-        return tamplate(req, res, `sobjects/${sObjectName}/quickActions`,null,instance , accessToken);
+        return template (req, res, `sobjects/${sObjectName}/quickActions`,null,instance , accessToken);
     }
 }

@@ -1,9 +1,9 @@
 
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.searchSuggestedRecords = (req , res) =>{
-    const {args :fields, groupId, ignoreUnsupportedSObjects, limit, networkId, query, sobject,
-    topicId, type, userId, useSearchScope, where, instance , accessToken} = req.body;    
+module.exports = (req , res  , template) =>{
+    const {args :{fields, groupId, ignoreUnsupportedSObjects, limit, networkId, query, sobject,
+    topicId, type, userId, useSearchScope, where, instance , accessToken}} = req.body;    
     let urlEnding = `?q=${query}&sobject=${sobject}`
     if(fields){
         urlEnding.append(`.fields=${fields}`);
@@ -37,8 +37,8 @@ module.exports.searchSuggestedRecords = (req , res) =>{
     }
 
     
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res , "search/suggestions" ,urlEnding, instance , accessToken);
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res , "search/suggestions" ,urlEnding, instance , accessToken);
   
 }
 

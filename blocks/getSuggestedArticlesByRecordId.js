@@ -1,8 +1,8 @@
-var tamplate = require('../Templates/GETTemplate');
-module.exports.getSuggestedArticlesByRecordId = (req , res) =>{
+ 
+module.exports = (req , res  , template) =>{
 
-    const {args : sObjectName ,language  ,articleTypes  , description , subject ,RecordID
-        ,categories ,limit , publishStatus , topics , validationStatus, instance , accessToken} = req.body;
+    const {args : {sObjectName ,language  ,articleTypes  , description , subject ,RecordID
+        ,categories ,limit , publishStatus , topics , validationStatus, instance , accessToken}} = req.body;
         let urlEnding = `?language=${language}`;
         if(articleTypes){
             urlEnding.concat(`&articleTypes=${articleTypes}`);
@@ -28,6 +28,6 @@ module.exports.getSuggestedArticlesByRecordId = (req , res) =>{
         if(validationStatus){
             urlEnding.concat(`&validationStatus=${validationStatus}`);
         }
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `sobjects/${sObjectName}/${RecordID}/suggestedArticles`,urlEnding ,instance , accessToken);
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res, `sobjects/${sObjectName}/${RecordID}/suggestedArticles`,urlEnding ,instance , accessToken);
 }

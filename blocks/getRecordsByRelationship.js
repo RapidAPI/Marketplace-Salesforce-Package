@@ -1,13 +1,13 @@
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.getRecordsByRelationship = (req , res) =>{
+module.exports = (req , res  , template) =>{
   
-    const {args : sObjectName, recordId , relationshipFieldName, fields,instance , accessToken } = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
+    const {args : {sObjectName, recordId , relationshipFieldName, fields,instance , accessToken} } = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
     if(fields){
-        return tamplate(req, res, `sobjects/${sObjectName}/${relationshipFieldName}`,`?fields=${fields}`,instance , accessToken );
+        return template (req, res, `sobjects/${sObjectName}/${relationshipFieldName}`,`?fields=${fields}`,instance , accessToken );
     }
     else{
-        return tamplate(req, res, `sobjects/${sObjectName}/${relationshipFieldName}`,null,instance , accessToken );
+        return template (req, res, `sobjects/${sObjectName}/${relationshipFieldName}`,null,instance , accessToken );
     }
 }

@@ -1,36 +1,6 @@
-const request = require('request');
-const config = require('../config.json');
-const version = config.defultVersion;
 
-module.exports.deleteObjectRows =(req,res) =>{
-
-    const args = req.body.args;
-    const sObjectName = args.sObjectName;
-    const id = args.id;
-    const instance = args.instance
-    const accessToken = args.accessToken;
-
-    let r = {
-        callback        : "",
-        contextWrites   : {}
-    };
-    
-    let to = args.to || "to";
-
-
-    request.delete({
-        headers:{'Authorization':`Bearer ${accessToken}`},
-        url: `https://${instance}.salesforce.com/services/data/v${version}/sobjects/${sObjectName}/${id}`,
-    }
-    ,function(err, response, body){
-        if (err) {
-            r.contextWrites[to] = err;
-            r.callback = 'error';
-        }
-        else {
-            r.contextWrites[to] = response;
-            r.callback = 'success';
-        }
-        res.status(200).send(r);
-        });
+module.exports = (req , res  , template) =>{
+    const {args: {sObjectName ,recordId  , instance , accessToken}} = req.body;
+    // template (req, res, urlEnding,urlParams , instance , accessToken)
+    return template (req, res, `sobjects/${sObjectName}/${recordId}` , null ,instance , accessToken);
 }

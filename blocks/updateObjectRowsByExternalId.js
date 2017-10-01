@@ -1,7 +1,7 @@
-var tamplate = require('../Templates/POSTTemplate');
-module.exports.updateObjectRowsByExternalId = (req , res) =>{
+ 
+module.exports = (req , res  , template) =>{
 
-    const { args : sObjectName ,fieldName , fieldValue , postBodyjson , instance ,contextId  , accessToken} = req.body; 
-    // tamplate(req, res,urlEnding,urlParams,postBodyjson , instance , accessToken) 
-    return tamplate(req, res, `sobjects/${sObjectName}/${fieldName}/${fieldValue}`,null ,postBodyjson,instance, accessToken) ;
+    const { args : {sObjectName ,fieldName , fieldValue , postBodyjson , instance ,contextId  , accessToken}} = req.body; 
+    // template (req, res,urlEnding,urlParams,postBodyjson , instance , accessToken) 
+    return template (req, res, `sobjects/${sObjectName}/${fieldName}/${fieldValue}`,null ,postBodyjson,instance, accessToken) ;
 }

@@ -1,9 +1,9 @@
-var tamplate = require('../Templates/POSTTemplate.js');
+ 
 
-module.exports.getUserPasswordInformation = (req , res) =>{
+module.exports = (req , res  , template) =>{
 
-    const {args : sObjectName, userId , newPassword, instance , accessToken } = req.body;
-    // tamplate(req, res,urlEnding,urlParams,postBodyjson , instance , accessToken) 
-    return tamplate(req, res, `sobjects/User/${userId}/password`,null, newPassword,instance , accessToken );
+    const {args : {sObjectName, userId , newPassword, instance , accessToken } }= req.body;
+    // template (req, res,urlEnding,urlParams,postBodyjson , instance , accessToken) 
+    return template (req, res, `sobjects/User/${userId}/password`,null, newPassword,instance , accessToken );
     
 }

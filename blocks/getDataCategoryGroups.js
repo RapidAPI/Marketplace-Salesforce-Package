@@ -1,13 +1,13 @@
-var tamplate = require('../Templates/GETTemplate');
-module.exports.getDataCategoryGroups = (req , res) =>{
+ 
+module.exports = (req , res  , template) =>{
    
-    const {args: sObjectName,topCategoriesOnly  ,instance, accessToken } = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
+    const {args: {sObjectName,topCategoriesOnly  ,instance, accessToken }} = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
     if(topCategoriesOnly){
-        return tamplate(req, res, `/support/dataCategoryGroups`,`?sObjectName=${sObjectName}&topCategoriesOnly=${topCategoriesOnly}`, instance, accessToken);
+        return template (req, res, `/support/dataCategoryGroups`,`?sObjectName=${sObjectName}&topCategoriesOnly=${topCategoriesOnly}`, instance, accessToken);
     }
     else{
-        return tamplate(req, res, `/support/dataCategoryGroups`,`?sObjectName=${sObjectName}`, instance, accessToken);
+        return template (req, res, `/support/dataCategoryGroups`,`?sObjectName=${sObjectName}`, instance, accessToken);
     }
     
 }

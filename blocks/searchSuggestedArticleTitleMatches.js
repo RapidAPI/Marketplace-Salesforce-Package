@@ -1,9 +1,9 @@
 
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.searchSuggestedArticleTitleMatches = (req , res) =>{
-    const {args : query, language, publishStatus, articleTypes , categories, channel, 
-        limit,publishStatus, topics, validationStatus, instance , accessToken} = req.body;    
+module.exports = (req , res  , template) =>{
+    const {args : {query, language, publishStatus, articleTypes , categories, channel, 
+        limit,publishStatus, topics, validationStatus, instance , accessToken}} = req.body;    
     let urlEnding = `?q=${query}&language=${language}&publishStatus=${publishStatus}`
     if(articleTypes){
         urlEnding.append(`?articleTypes=${articleTypes}`);
@@ -28,7 +28,7 @@ module.exports.searchSuggestedArticleTitleMatches = (req , res) =>{
     }
 
     
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res , "search/suggestTitleMatches" ,urlEnding, instance , accessToken);
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res , "search/suggestTitleMatches" ,urlEnding, instance , accessToken);
   
 }

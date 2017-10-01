@@ -1,14 +1,13 @@
-var tamplate = require('../Templates/PATCHTemplate');
 
-module.exports.updateObjectRows = (req , res) =>{
+module.exports = (req , res  , template) =>{
     
-    const { args : sObjectName ,fields, instance  ,id , accessToken} = req.body;    
-    // tamplate(req, res,urlEnding,urlParams,postBodyjson , instance , accessToken) 
+    const { args : {sObjectName ,fields, instance  ,id , accessToken}} = req.body;    
+    // template (req, res,urlEnding,urlParams,postBodyjson , instance , accessToken) 
     if(fields){
-        return tamplate(req, res, `sobjects/${sObjectName}/${id}` ,`?fields=${fields}`,instance , accessToken);
+        return template (req, res, `sobjects/${sObjectName}/${id}` ,`?fields=${fields}`,instance , accessToken);
     }
     else{
-        return tamplate(req, res, `sobjects/${sObjectName}/${id}`,null,instance );
+        return template (req, res, `sobjects/${sObjectName}/${id}`,null,instance );
     }
     
 }

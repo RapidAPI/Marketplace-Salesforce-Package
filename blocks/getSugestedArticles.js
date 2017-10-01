@@ -1,8 +1,8 @@
-var tamplate = require('../Templates/GETTemplate');
-module.exports.getSugestedArticles = (req , res) =>{
+ 
+module.exports = (req , res  , template) =>{
 
-    const {args : sObjectName ,language  ,articleTypes  , description , subject 
-        ,categories ,limit , publishStatus , topics , validationStatus, instance , accessToken} = req.body;
+    const {args : {sObjectName ,language  ,articleTypes  , description , subject 
+        ,categories ,limit , publishStatus , topics , validationStatus, instance , accessToken}} = req.body;
         let urlEnding = `?language=${language}`;
         if(articleTypes){
             urlEnding.concat(`&articleTypes=${articleTypes}`);
@@ -29,7 +29,7 @@ module.exports.getSugestedArticles = (req , res) =>{
             urlEnding.concat(`&validationStatus=${validationStatus}`);
         }
 
-    // tamplate(req ,res ,urlEnding ,urlParams)
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
     
-    return tamplate(req, res, `sobjects/${sObjectName}/suggestedArticles/`,urlEnding ,instance , accessToken);
+    return template (req, res, `sobjects/${sObjectName}/suggestedArticles/`,urlEnding ,instance , accessToken);
 }

@@ -1,10 +1,10 @@
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.getUserPasswordInformation = (req , res) =>{
+module.exports = (req , res  , template) =>{
   
-    const {args : sObjectName, userId , instance , accessToken } = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
+    const {args : {sObjectName, userId , instance , accessToken }} = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
     
-    return tamplate(req, res, `sobjects/User/${userId}/password`,null,instance , accessToken );
+    return template (req, res, `sobjects/User/${userId}/password`,null,instance , accessToken );
     
 }

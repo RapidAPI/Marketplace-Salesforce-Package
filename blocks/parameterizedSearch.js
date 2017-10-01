@@ -1,13 +1,13 @@
-var tamplate = require('../Templates/POSTTemplate');
-module.exports.parameterizedSearch = (req , res) =>{
+ 
+module.exports = (req , res  , template) =>{
         const args = req.body;
         let postJsonBody = {q : args.query};
-        for(key in args){
+        Object.keys(args).forEach(key => {
             if((key != accessToken)&&(key != instance )&&(key != query)){
                 postJsonBody[key]  = args[key];
             }
-        }
+        });
         postJsonBody = JSON.stringify(postJsonBody);
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `parameterizedSearch`,null ,postJsonBody,instance , accessToken);
+    // template (req, res,urlEnding,urlParams,postBodyjson , instance , accessToken)
+    return template (req, res, `parameterizedSearch`,null ,postJsonBody,instance , accessToken);
 }

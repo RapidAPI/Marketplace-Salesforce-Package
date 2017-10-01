@@ -1,8 +1,8 @@
-var tamplate = require('../Templates/GETTemplate');
-module.exports.getListViewResults = (req , res) =>{
+ 
+module.exports = (req , res  , template) =>{
    
-    const {args: sObjectType,listViewId  ,instance, accessToken } = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `sobjects/${sObjectType}/listviews/${listViewId}/results`,null, instance, accessToken);
+    const {args: {sObjectType,listViewId  ,instance, accessToken} } = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res, `sobjects/${sObjectType}/listviews/${listViewId}/results`,null, instance, accessToken);
     
 }

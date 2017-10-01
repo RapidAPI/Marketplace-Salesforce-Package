@@ -1,13 +1,13 @@
-var tamplate = require('../Templates/GETTemplate');
-
-module.exports.getRecordCount = (req , res) =>{
  
-    const {args : sObjects, instance , accessToken} = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
+
+module.exports = (req , res  , template) =>{
+ 
+    const {args :{ sObjects, instance , accessToken}} = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
     if(sObjects){
-        return tamplate(req, res, `recent`, `?sObjects=${sObjects}`,instance , accessToken);
+        return template (req, res, `recent`, `?sObjects=${sObjects}`,instance , accessToken);
     }
     else{
-        return tamplate(req, res, `recent`,null ,instance , accessToken);
+        return template (req, res, `recent`,null ,instance , accessToken);
     }
 }

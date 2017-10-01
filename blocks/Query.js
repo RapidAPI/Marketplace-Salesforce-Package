@@ -1,9 +1,9 @@
-var tamplate = require('../Templates/GETTemplate');
-
-module.exports.Query = (req , res) =>{
  
-    const {args : query, instance , accessToken} = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `query`, `?q=${query}`,instance , accessToken);
+
+module.exports = (req , res  , template) =>{
+ 
+    const {args : {query, instance , accessToken}} = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res, `query`, `?q=${query}`,instance , accessToken);
 
 }

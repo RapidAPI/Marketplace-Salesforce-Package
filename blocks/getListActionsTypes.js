@@ -1,10 +1,10 @@
-var tamplate = require('../Templates/GETTemplate');
-
-module.exports.getListActionsTypes = (req , res) =>{
  
-    const {args : instance , accessToken} = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `actions`, null,instance , accessToken);
+
+module.exports = (req , res  , template) =>{
+ 
+    const {args : {instance , accessToken}} = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res, `actions`, null,instance , accessToken);
         
 
 }

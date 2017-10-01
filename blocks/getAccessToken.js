@@ -2,7 +2,7 @@ const request = require('request');
 const config = require('../config.json');
 
 
-module.exports.getAccessToken =(req, res) =>{
+module.exports =(req, res , template) =>{
     
     const args = req.body;
     const {args: {client_id ,client_secret, username , password}} = req.body;

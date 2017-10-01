@@ -2,13 +2,13 @@ const request = require('request');
 const config = require('../config.json');
 const version = config.defultVersion;
 
-module.exports.describeGlobal =(req, res) =>{
+module.exports =(req, res , template) =>{
     
     const args = req.body.args;
     const If_Modified_Since = args.If_Modified_Since;
     const instance = args.instance;
     const accessToken = args.accessToken;
-    //TODO: check with flag const If_Modified_Since = 
+//TODO: change template to be able to add to header
     let r = {
         callback        : "",
         contextWrites   : {}

@@ -1,9 +1,9 @@
-var tamplate = require('../Templates/POSTTemplate');
-
-module.exports.postQuickAction = (req , res) =>{
  
-    const {args : actionName, input, instance , accessToken} = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `quickActions/${actionName}`, input,instance , accessToken);
+
+module.exports = (req , res  , template) =>{
+ 
+    const {args :{ actionName, input, instance , accessToken}} = req.body;
+    // template (req, res,urlEnding,urlParams,postBodyjson , instance , accessToken)
+    return template (req, res, `quickActions/${actionName}`, input,instance , accessToken);
 
 }

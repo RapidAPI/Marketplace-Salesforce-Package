@@ -1,14 +1,14 @@
-var tamplate = require('../Templates/GETTemplate');
-
-module.exports.getRecentlyViewedItems = (req , res) =>{
  
-    const {args : limit, instance , accessToken} = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
+
+module.exports = (req , res  , template) =>{
+ 
+    const {args : {limit, instance , accessToken}} = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
     if(limit){
-        return tamplate(req, res, `recent`, `?limit=${limit}`,instance , accessToken);
+        return template (req, res, `recent`, `?limit=${limit}`,instance , accessToken);
     }
     else{
-        return tamplate(req, res, `recent`, null ,instance , accessToken);
+        return template (req, res, `recent`, null ,instance , accessToken);
         
     }
 }

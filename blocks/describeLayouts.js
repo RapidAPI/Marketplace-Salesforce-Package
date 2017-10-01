@@ -1,17 +1,17 @@
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.describeLayouts = (req , res) =>{
+module.exports = (req , res  , template) =>{
 
-    const {args : sObjectName ,recordTypeId ,instance , accessToken  } = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
+    const {args :{ sObjectName ,recordTypeId ,instance , accessToken } } = req.body;
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
     if(sObjectName && recordTypeId){
-    return tamplate(req, res, `sobjects/${sObjectName}/describe/layouts/${recordTypeId}` , null ,instance , accessToken);
+    return template (req, res, `sobjects/${sObjectName}/describe/layouts/${recordTypeId}` , null ,instance , accessToken);
     }
     else if(sObjectName){
-        return tamplate(req, res, `sobjects/${sObjectName}/describe/layouts`),null ,instance , accessToken;
+        return template (req, res, `sobjects/${sObjectName}/describe/layouts`),null ,instance , accessToken;
     }
     else{
-        return tamplate(req, res, `sobjects/Global/describe/layouts`,null ,instance , accessToken);
+        return template (req, res, `sobjects/Global/describe/layouts`,null ,instance , accessToken);
     }
     
 }

@@ -1,7 +1,7 @@
-var tamplate = require('../Templates/POSTTemplate');
-module.exports.postToStandardAction = (req , res) =>{
+ 
+module.exports = (req , res  , template) =>{
 
-    const {args :   actionName, inputs , instance , accessToken} = req.body;
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res, `actions/standard/${actionName}/`,null ,inputs,instance , accessToken);
+    const {args : {actionName, inputs , instance , accessToken}} = req.body;
+    // template (req, res,urlEnding,urlParams,postBodyjson , instance , accessToken)
+    return template (req, res, `actions/standard/${actionName}/`,null ,inputs,instance , accessToken);
 }

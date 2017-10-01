@@ -4,7 +4,7 @@ const config = require('../config.json');
 const version = config.defultVersion;
 const baseUrl = config.baseUrl;
 
-module.exports.versions =(req,res) =>{
+module.exports =(req,res , template) =>{
 
     const args = req.body.args;
     const instance = args.instance;

@@ -1,8 +1,8 @@
 
-var tamplate = require('../Templates/GETTemplate');
+ 
 
-module.exports.searchSuggestedQueries = (req , res) =>{
-    const {args :query, language, limit, channel, instance , accessToken} = req.body;    
+module.exports = (req , res  , template) =>{
+    const {args :{query, language, limit, channel, instance , accessToken}} = req.body;    
     let urlEnding = `?q=${query}&language=${language}`
     if(limit){
         urlEnding.append(`&limit=${limit}`);
@@ -11,8 +11,8 @@ module.exports.searchSuggestedQueries = (req , res) =>{
         urlEnding.append(`&channel=${channel}`);
     }
 
-    // tamplate(req ,res ,urlEnding ,urlParams)
-    return tamplate(req, res , "search/suggestSearchQueries" ,urlEnding, instance , accessToken);
+    //template(req,res,urlEnding,urlParams , instance , accessToken)
+    return template (req, res , "search/suggestSearchQueries" ,urlEnding, instance , accessToken);
   
 }
 
