@@ -6,7 +6,7 @@ const version = config.defultVersion;
 const baseUrl = config.baseUrl;
 
 
-module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace , accessToken) =>{
+module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , accessToken) =>{
     
     const args = req.body.args;
 
