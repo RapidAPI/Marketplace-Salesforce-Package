@@ -205,7 +205,7 @@ module.exports.do = function(req, res){
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"String", info:"the SObject required", required: true},                
                 {name:"recordId", type:"String", info:"the record id to fetch", required: true},
-                {name:"fields", type:"String", info:"Optional list of fields used to return values for.", required: false}
+                {name:"fields", type:"String", info:"Optional list of fields used to return values for.", required: true}
                 
             ],
             "callbacks":[
@@ -253,7 +253,9 @@ module.exports.do = function(req, res){
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"String", info:"the SObject required", required: true},                
                 {name:"fieldName", type:"String", info:"the  specified external ID field", required: true},
-                {name:"fieldValue", type:"String", info:"the value for the object.", required: true}
+                {name:"fieldValue", type:"String", info:"the value for the object.", required: true},
+                {name:"fields", type:"String", info:"the values to change.", required: true},
+                
                 
             ],
             "callbacks":[
