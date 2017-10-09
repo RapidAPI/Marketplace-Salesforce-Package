@@ -9,8 +9,7 @@ const baseUrl = config.baseUrl;
 module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace , accessToken) =>{
     
     const args = req.body.args;
-    const SOName = args.SOName;
-    const sObjectName = args.sObjectName;
+
 
     let r = {
         callback        : "",
@@ -41,6 +40,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace , accessTok
             r.callback = 'error';
         }
         else {
+            response.body = JSON.parse(response.body);            
             r.contextWrites[to] = response;
             r.callback = 'success';
         }
