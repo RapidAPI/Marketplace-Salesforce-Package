@@ -19,7 +19,7 @@ const jsonMappingRequest = require("./endpointToReqTypeMapping.json")
 //If ran in production - use enviroment PORT. In development, default to 8080
 const PORT = process.env.PORT || 8080;
 //The package name
-global.PACKAGE_NAME = "SalesForce";
+global.PACKAGE_NAME = "Salesforce";
 
 //Initialize web server
 const app = express();
