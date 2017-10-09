@@ -1,5 +1,5 @@
  
-module.exports.createSObject =(req, res) =>{
+module.exports =(req, res) =>{
     const {args : {sObjectName  , postBodyjson , instance , accessToken}} = req.body;
 
     // template (req, res,urlEnding,urlParams,postBodyjson , instance , accessToken)
