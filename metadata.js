@@ -73,7 +73,7 @@ module.exports.do = function(req, res){
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"modifiedSince", type:"String", info:"query only colums moldified within the given range", required: false}                
+                {name:"modifiedSince", type:"Datepicker", info:"query only colums moldified within the given range", required: false}                
                 
             ],
             "callbacks":[
@@ -115,7 +115,7 @@ module.exports.do = function(req, res){
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"String", info:"the SObject required", required: true},                
-                {name:"modifiedSince", type:"String", info:"query only colums moldified within the given range", required: false}                                
+                {name:"modifiedSince", type:"Datepicker", info:"query only colums moldified within the given range", required: false}                                
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -129,8 +129,8 @@ module.exports.do = function(req, res){
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"String", info:"the SObject required", required: true},                
-                {name:"start", type:"String", info:"Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.", required: true},
-                {name:"end", type:"String", info:" Ending date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data. ", required: true}  
+                {name:"start", type:"Datepicker", info:"Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.", required: true},
+                {name:"end", type:"Datepicker", info:" Ending date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data. ", required: true}  
                 
             ],
             "callbacks":[
@@ -144,8 +144,8 @@ module.exports.do = function(req, res){
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"sObjectName", type:"String", info:"the SObject required", required: true},                
-                {name:"start", type:"String", info:"Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.", required: true},
-                {name:"end", type:"String", info:" Ending date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data. ", required: true}                              
+                {name:"start", type:"Datepicker", info:"Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.", required: true},
+                {name:"end", type:"Datepicker", info:" Ending date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data. ", required: true}                              
             ],
             "callbacks":[
                 {name:"success", info:"Success"},

@@ -40,7 +40,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instace , accessTok
             r.callback = 'error';
         }
         else {
-            response.body = JSON.parse(response.body);            
+            // response.body = JSON.parse(response.body);            
             r.contextWrites[to] = response;
             r.callback = 'success';
         }

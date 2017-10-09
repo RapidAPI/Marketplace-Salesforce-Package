@@ -31,7 +31,7 @@ module.exports =(req, res, urlEnding,urlParams , instance , accessToken) =>{
             r.callback = 'error';
         }
         else {
-            response.body = JSON.parse(response.body);            
+            // response.body = JSON.parse(response.body);            
             r.contextWrites[to] = response;
             r.callback = 'success';
         }
