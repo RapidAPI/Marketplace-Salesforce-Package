@@ -2,7 +2,7 @@
 
 module.exports.do = function(req, res){
     res.status(200).send({
-        "package": 'salesforce',
+        "package": 'SalesForce',
         "tagline": "interact with salseforce",
         "description": "salesforce provides companies with an interface for case management and task management, and a system for automatically routing and escalating important events.",
         "image": "https://logo.clearbit.com/salesforce.com", 
