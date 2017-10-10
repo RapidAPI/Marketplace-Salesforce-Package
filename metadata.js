@@ -327,7 +327,6 @@ module.exports.do = function(req, res){
             "name":"getPlatformAction",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"version", type:"String", info:"the api version used", required: false},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true}
             ],
             "callbacks":[
