@@ -34,6 +34,7 @@ module.exports =(req, res , template) =>{
             r.callback = 'error';
         }
         else {
+            response.body = JSON.parse(response.body);                        
             r.contextWrites[to] = response;
             r.callback = 'success';
         }

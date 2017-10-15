@@ -444,10 +444,11 @@ module.exports.do = function(req, res){
         {
             "name":"getSuggestedArticlesByRecordId",
             "args":[
-                
-                {name:"language", type:"credentials", info:"Language that the article is written in.", required: true},                
+
+                {name:"RecordID", type:"String", info:"record id to query by.", required: true},                                
+                {name:"language", type:"String", info:"Language that the article is written in.", required: true},                
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"sObjectName", type:"String", info:"the SObject required", required: false},                  
+                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"description", type:"String", info:"Text of the description. Valid only for new records without an existing ID and required if subject is null.", required: false},
                 {name:"subject", type:"String", info:"Text of the subject", required: false},                 {name:"subject", type:"String", info:"Text of the subject", required: false}, 
@@ -467,7 +468,7 @@ module.exports.do = function(req, res){
         {
             "name":"getSugestedArticles",
             "args":[
-                
+                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                                  
                 {name:"language", type:"credentials", info:"Language that the article is written in.", required: true},                
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
@@ -581,7 +582,7 @@ module.exports.do = function(req, res){
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"objects", type:"String", info:"A comma-delimited list of objects. The primary compact layout for each object in this list will be returned in the response of this resource.                ", required: true},
+                {name:"sObjectName", type:"String", info:"A comma-delimited list of objects. The primary compact layout for each object in this list will be returned in the response of this resource.                ", required: true},
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -1035,8 +1036,8 @@ module.exports.do = function(req, res){
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"query", type:"String", info:"tA SOSL statement that is properly URL-encoded.", required: true},
                 {name:"sObject", type:"String", info:"the SObject required", required: true},     
-                {name:"fields", type:"String", info:"Used for creating lookup queries. Specify multiple fields using a comma-separated list. Specifies which lookup fields to be returned in the response.", required: false},                
-                {name:"groupId", type:"String", info:"groupId	Optional. Specifies one or more unique identifiers of one or more groups that the question to return was posted to. Specify multiple groups using a comma-separated list. This parameter is only applicable when the parameter type equals question. Don’t use with the userId.", required: false},                
+                {name:"fields", type:"String", info:"format for this field:ccount.fields=Website,Phone&contact.fields=Phone .Used for creating lookup queries. Specify multiple fields using a comma-separated list. Specifies which lookup fields to be returned in the response.", required: false},                
+                {name:"groupId", type:"String", info:"groupId Optional. Specifies one or more unique identifiers of one or more groups that the question to return was posted to. Specify multiple groups using a comma-separated list. This parameter is only applicable when the parameter type equals question. Don’t use with the userId.", required: false},                
                 {name:"ignoreUnsupportedSObjects", type:"String", info:"Specifies what to do if unsupported objects are included in the request. If false and an unsupported object is included, an error is returned. If true and an unsupported object is included, the object is ignored and no error is returned. See the Unsupported Objects section for reference. The default is false.", required: false},                
                 {name:"limit", type:"String", info:"", required: false},                
                 {name:"networkId", type:"String", info:"", required: false},                

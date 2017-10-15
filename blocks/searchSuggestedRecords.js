@@ -6,7 +6,7 @@ module.exports = (req , res  , template) =>{
     topicId, type, userId, useSearchScope, where, instance , accessToken}} = req.body;    
     let urlEnding = `?q=${query}&sobject=${sobject}`
     if(fields){
-        urlEnding.append(`.fields=${fields}`);
+        urlEnding.append(`${fields}`);
     }
     if(groupId){
         urlEnding.append(`&groupId=${groupId}`);
