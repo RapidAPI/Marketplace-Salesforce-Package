@@ -606,7 +606,7 @@ module.exports.do = function(req, res){
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"actionName", type:"String", info:"the required action to return", required: true},
-                {name:"inputs", type:"String", info:"A JSON object{ \"inputs\": [ \"field\": \"value\" ] }", required: false}
+                {name:"inputs", type:"String", info:"A JSON object{ \"inputs\": [ \"field\": \"value\" ] }", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -620,7 +620,7 @@ module.exports.do = function(req, res){
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"actionName", type:"String", info:"the required action to return", required: true},
-                {name:"inputs", type:"String", info:"A JSON object{ \"inputs\": [ \"field\": \"value\" ] }", required: false}
+                {name:"inputs", type:"String", info:"A JSON object{ \"inputs\": [ \"field\": \"value\" ] }", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -645,8 +645,6 @@ module.exports.do = function(req, res){
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"actionName", type:"String", info:"the required action to return", required: true},
-                {name:"userId", type:"String", info:"the user id to fetch", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
