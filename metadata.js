@@ -339,7 +339,7 @@ module.exports.do = function(req, res){
             "name":"getObjectsQuickActions",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"sObjectName", type:"String", info:"the SObject required", required: false},                  
+                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"actionName", type:"String", info:"the required action to return", required: false}
             ],
@@ -354,9 +354,9 @@ module.exports.do = function(req, res){
             "name":"postObjectsQuickActions",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"sObjectName", type:"String", info:"the SObject required", required: false},                  
+                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"actionName", type:"String", info:"the required action to return", required: false},
+                {name:"actionName", type:"String", info:"the required action to return", required: true},
                 {name:"jsonbody", type:"String", info:"json formated body for new object to be created", required: true}
             ],
             "callbacks":[
