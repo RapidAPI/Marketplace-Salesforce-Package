@@ -31,5 +31,5 @@ module.exports = (req , res  , template) =>{
 
     //template(req,res,urlEnding,urlParams , instance , accessToken)
     
-    return template (req, res, `sobjects/${sObjectName}/suggestedArticles/`,urlEnding ,instance , accessToken);
+    return template (req, res, `sobjects/${sObjectName}/suggestedArticles`,urlEnding ,instance , accessToken);
 }
