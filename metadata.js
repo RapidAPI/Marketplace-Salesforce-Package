@@ -369,9 +369,9 @@ module.exports.do = function(req, res){
             "name":"getObjectsActionsDefaultValues",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"sObjectName", type:"String", info:"the SObject required", required: false},                  
+                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"actionName", type:"String", info:"the required action to return", required: true}
+                {name:"actionName", type:"String", info:"the required action to return", required: false}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -492,7 +492,6 @@ module.exports.do = function(req, res){
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"actionName", type:"String", info:"the required action to return", required: true},
                 {name:"userId", type:"String", info:"the user id to fetch", required: true}
             ],
             "callbacks":[
