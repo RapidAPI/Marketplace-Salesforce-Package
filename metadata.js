@@ -942,7 +942,9 @@ module.exports.do = function(req, res){
             "name":"postQuickAction",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"accessToken", type:"String", info:"Oath acces token", required: true}
+                {name:"accessToken", type:"String", info:"Oath acces token", required: true},
+                {name:"input", type:"String", info:"input for action creation", required: true},
+                {name:"actionName", type:"String", info:"action name", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},

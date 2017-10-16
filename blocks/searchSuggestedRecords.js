@@ -32,7 +32,7 @@ module.exports = (req , res  , template) =>{
     if(useSearchScope){
         urlParams = urlParams.append(`&useSearchScope=${useSearchScope}`);
     }
-    if(wheretype){
+    if(where){
         urlParams =  urlParams.append(`&where=${where}`);
     }
 
