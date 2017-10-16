@@ -8,7 +8,7 @@ const baseUrl = config.baseUrl;
 module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , accessToken) =>{
     
     const args = req.body.args;
-    
+    let parsedJson = JSON.parse(postBodyjson);
     let r = {
         callback        : "",
         contextWrites   : {}
@@ -29,7 +29,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , accessTo
             "Content-Type" : "application/json"
         },
         url: url,
-        json:  postBodyjson
+        json:  parsedJson
     }
 
     ,function(err, response, body){
