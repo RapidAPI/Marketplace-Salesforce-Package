@@ -3,7 +3,7 @@ module.exports = (req , res  , template) =>{
 
     const {args : {sObjectName ,language  ,articleTypes  , description , subject ,RecordID
         ,categories ,limit , publishStatus , topics , validationStatus, instance , accessToken}} = req.body;
-        let urlParams = `?language=${language}`;
+        let urlParams = `language=${language}`;
         if(articleTypes){
             urlParams = urlParams.concat(`&articleTypes=${articleTypes}`);
         }   

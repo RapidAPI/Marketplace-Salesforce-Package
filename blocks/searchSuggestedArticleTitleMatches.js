@@ -4,9 +4,9 @@
 module.exports = (req , res  , template) =>{
     const {args : {query, language, publishStatus, articleTypes , categories, channel, 
         limit,publishStatus, topics, validationStatus, instance , accessToken}} = req.body;    
-    let urlParams = `?q=${query}&language=${language}&publishStatus=${publishStatus}`
+    let urlParams = `q=${query}&language=${language}&publishStatus=${publishStatus}`
     if(articleTypes){
-        urlParams = urlParams.append(`?articleTypes=${articleTypes}`);
+        urlParams = urlParams.append(`&articleTypes=${articleTypes}`);
     }
     if(categories){
         urlParams = urlParams.append(`&categories=${categories}`);

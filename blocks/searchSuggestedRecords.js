@@ -4,7 +4,7 @@
 module.exports = (req , res  , template) =>{
     const {args :{fields, groupId, ignoreUnsupportedSObjects, limit, networkId, query, sobject,
     topicId, type, userId, useSearchScope, where, instance , accessToken}} = req.body;    
-    let urlParams = `?q=${query}&sobject=${sobject}`
+    let urlParams = `q=${query}&sobject=${sobject}`
     if(fields){
         urlParams =  urlParams.append(`${fields}`);
     }

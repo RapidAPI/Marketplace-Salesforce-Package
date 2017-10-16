@@ -792,6 +792,21 @@ module.exports.do = function(req, res){
             ],
             "description":" Get a list of all available custom actions."
         },
+        {
+            "name":"getProcessApprovals",
+            "args":[
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"accessToken", type:"String", info:"Oath acces token", required: true},
+                {name:"group", type:"String", info:"the group to filter the data", required: true},
+                {name:"sObjectName", type:"String", info:"KnowledgeArticleVersion only.... for now", required: true},
+                {name:"category", type:"String", info:"", required: true},
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":"Submit a particular record if that entity supports an approval process and one has already been defined. "
+        },
          {
             "name":"submitRecordForApproval",
             "args":[
@@ -816,7 +831,23 @@ module.exports.do = function(req, res){
                 {name:"error", info:"Error"}
             ],
             "description":" Returns a list of all active workflow rules."
+        },       
+         {
+            "name":"getSingleProcessRule",
+            "args":[
+                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
+                {name:"accessToken", type:"String", info:"Oath acces token", required: true},
+                {name:"workflowRuleId", type:"String", info:"rule id", required: true},
+                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
+            ],
+            "callbacks":[
+                {name:"success", info:"Success"},
+                {name:"error", info:"Error"}
+            ],
+            "description":" Returns a list of all active workflow rules."
         },
+
+        
          {
             "name":"triggerProcessRules",
             "args":[

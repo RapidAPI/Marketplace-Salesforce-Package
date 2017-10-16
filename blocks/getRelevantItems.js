@@ -7,14 +7,14 @@ module.exports = (req , res  , template) =>{
 
     if(sObjects){
         if(sobject_lastUpdatedId){
-            return template (req, res, `sobjects/relevantItems`, `?sObjects=${sObjects}&sobject.lastUpdatedId=${sobject_lastUpdatedId}`,instance , accessToken);
+            return template (req, res, `sobjects/relevantItems`, `sObjects=${sObjects}&sobject.lastUpdatedId=${sobject_lastUpdatedId}`,instance , accessToken);
             
         }
-        return template (req, res, `sobjects/relevantItems`, `?sObjects=${sObjects}`,instance , accessToken);
+        return template (req, res, `sobjects/relevantItems`, `sObjects=${sObjects}`,instance , accessToken);
     }
     else{
         if(lastUpdatedId){
-            return template (req, res, `recent`,`?lastUpdatedId=${lastUpdatedId}` ,instance , accessToken);
+            return template (req, res, `recent`,`lastUpdatedId=${lastUpdatedId}` ,instance , accessToken);
             
         }
         return template (req, res, `recent`,null ,instance , accessToken);

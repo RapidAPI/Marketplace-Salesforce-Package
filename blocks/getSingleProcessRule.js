@@ -7,10 +7,10 @@ module.exports = (req , res  , template) =>{
     url = `process/rules`;
     if(sObjectName){
         if(workflowRuleId){
-            url.concat(`${sObjectName}/${workflowRuleId}`);
+            url = url.concat(`${sObjectName}/${workflowRuleId}`);
         }
         else{
-            url.concat(sObjectName);
+            url = url.concat(sObjectName);
         }
     }
     return template (req, res,url , null,instance , accessToken);
