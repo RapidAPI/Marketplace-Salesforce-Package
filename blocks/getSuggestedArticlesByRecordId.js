@@ -3,31 +3,32 @@ module.exports = (req , res  , template) =>{
 
     const {args : {sObjectName ,language  ,articleTypes  , description , subject ,RecordID
         ,categories ,limit , publishStatus , topics , validationStatus, instance , accessToken}} = req.body;
-        let urlEnding = `?language=${language}`;
+        let urlParams = `?language=${language}`;
         if(articleTypes){
-            urlEnding.concat(`&articleTypes=${articleTypes}`);
+            urlParams = urlParams.concat(`&articleTypes=${articleTypes}`);
         }   
         if(description){
-            urlEnding.concat(`&description=${description}`);
+            urlParams =  urlParams.concat(`&description=${description}`);
         }
         if(subject){
-            urlEnding.concat(`&subject=${subject}`);
+            urlParams = urlParams.concat(`&subject=${subject}`);
         }
         if(categories){
-            urlEnding.concat(`&categories=${categories}`);
+            urlParams =  urlParams.concat(`&categories=${categories}`);
         }
         if(limit){
-            urlEnding.concat(`&limit=${limit}`);
+            urlParams = urlParams.concat(`&limit=${limit}`);
         }
         if(publishStatus){
-            urlEnding.concat(`&publishStatus=${publishStatus}`);
+            urlParams = urlParams.concat(`&publishStatus=${publishStatus}`);
         }
         if(topics){
-            urlEnding.concat(`&topics=${topics}`);
+            urlParams =  urlParams.concat(`&topics=${topics}`);
         }
         if(validationStatus){
-            urlEnding.concat(`&validationStatus=${validationStatus}`);
+            urlParams =  urlParams.concat(`&validationStatus=${validationStatus}`);
         }
+        
     //template(req,res,urlEnding,urlParams , instance , accessToken)
-    return template (req, res, `sobjects/${sObjectName}/${RecordID}/suggestedArticles`,urlEnding ,instance , accessToken);
+    return template (req, res, `sobjects/${sObjectName}/${RecordID}/suggestedArticles`,urlParams ,instance , accessToken);
 }

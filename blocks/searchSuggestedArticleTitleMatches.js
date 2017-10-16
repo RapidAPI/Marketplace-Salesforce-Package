@@ -4,31 +4,30 @@
 module.exports = (req , res  , template) =>{
     const {args : {query, language, publishStatus, articleTypes , categories, channel, 
         limit,publishStatus, topics, validationStatus, instance , accessToken}} = req.body;    
-    let urlEnding = `?q=${query}&language=${language}&publishStatus=${publishStatus}`
+    let urlParams = `?q=${query}&language=${language}&publishStatus=${publishStatus}`
     if(articleTypes){
-        urlEnding.append(`?articleTypes=${articleTypes}`);
+        urlParams = urlParams.append(`?articleTypes=${articleTypes}`);
     }
     if(categories){
-        urlEnding.append(`&categories=${categories}`);
+        urlParams = urlParams.append(`&categories=${categories}`);
     }
     if(channel){
-        urlEnding.append(`&channel=${channel}`);
+        urlParams = urlParams.append(`&channel=${channel}`);
     }
     if(limit){
-        urlEnding.append(`&limit=${limit}`);
+        urlParams = urlParams.append(`&limit=${limit}`);
     }
     if(publishStatus){
-        publishStatus.append(`&publishStatus=${publishStatus}`);
+        urlParams =  urlParams.append(`&publishStatus=${publishStatus}`);
     }
     if(topics){
-        urlEnding.append(`&topics=${topics}`);
+        urlParams = urlParams.append(`&topics=${topics}`);
     }
     if(validationStatus){
-        urlEnding.append(`&validationStatus=${validationStatus}`);
+        urlParams = urlParams.append(`&validationStatus=${validationStatus}`);
     }
-
     
     //template(req,res,urlEnding,urlParams , instance , accessToken)
-    return template (req, res , "search/suggestTitleMatches" ,urlEnding, instance , accessToken);
+    return template (req, res , "search/suggestTitleMatches" ,urlParams, instance , accessToken);
   
 }

@@ -3,35 +3,35 @@ module.exports = (req , res  , template) =>{
 
     const {args : {query,channel ,subject ,categories , queryMethod,
          sort, order, pageSize,pageNumber , instance , accessToken}} = req.body;
-        let urlEnding = "";
+        let urlParams = "";
         if(query){
-            urlEnding.concat(`&query=${query}`);
+            urlParams = urlParams.concat(`&query=${query}`);
         }   
         if(channel){
-            urlEnding.concat(`&channel=${channel}`);
+            urlParams =  urlParams.concat(`&channel=${channel}`);
         }
         if(subject){
-            urlEnding.concat(`&subject=${subject}`);
+            urlParams =  urlParams.concat(`&subject=${subject}`);
         }
         if(categories){
-            urlEnding.concat(`&categories=${categories}`);
+            urlParams =  urlParams.concat(`&categories=${categories}`);
         }
         if(queryMethod){
-            urlEnding.concat(`&queryMethod=${queryMethod}`);
+            urlParams =  urlParams.concat(`&queryMethod=${queryMethod}`);
         }
         if(sort){
-            urlEnding.concat(`&sort=${sort}`);
+            urlParams = urlParams.concat(`&sort=${sort}`);
         }
         if(order){
-            urlEnding.concat(`&order=${order}`);
+            urlParams =  urlParams.concat(`&order=${order}`);
         }
         if(pageSize){
-            urlEnding.concat(`&pageSize=${pageSize}`);
+            urlParams = urlParams.concat(`&pageSize=${pageSize}`);
         }
         if(pageNumber){
-            urlEnding.concat(`&pageNumber=${pageNumber}`);
+            urlParams = urlParams.concat(`&pageNumber=${pageNumber}`);
         }
-
+        urlParams =  urlParams.replace("&" , "");
         //template(req,res,urlEnding,urlParams , instance , accessToken)
-    return template (req, res, `/support/knowledgeArticles`,urlEnding ,instance , accessToken);
+    return template (req, res, `support/knowledgeArticles`,urlParams ,instance , accessToken);
 }

@@ -2,15 +2,15 @@
 
 module.exports = (req , res  , template) =>{
     const {args : {articleId, channel ,updateViewStat , instance , accessToken}} = req.body;
-        let urlEnding = `?articleId=${articleId}`;
+        let urlParams = `?articleId=${articleId}`;
         if(channel){
-            urlEnding.concat(`&channel=${channel}`);
+            urlParams = urlParams.concat(`&channel=${channel}`);
         }
         if(updateViewStat){
-            urlEnding.concat(`&updateViewStat=${updateViewStat}`);
+            urlParams = urlParams.concat(`&updateViewStat=${updateViewStat}`);
         }
 
     //template(req,res,urlEnding,urlParams , instance , accessToken)
     
-    return template (req, res, `/support/knowledgeArticles`,urlEnding ,instance , accessToken);
+    return template (req, res, `support/knowledgeArticles`,urlParams ,instance , accessToken);
 }
