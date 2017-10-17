@@ -10,7 +10,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , accessTo
     
     const args = req.body.args;
 
-
+    let parsedJson = JSON.parse(postBodyjson);    
     let r = {
         callback        : "",
         contextWrites   : {}
@@ -19,7 +19,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , accessTo
     let to = args.to || "to";
     let url = ""
     if(urlParams){
-        url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}/${urlParams}`;
+        url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}?${urlParams}`;
     }
     else{
         url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}`;
@@ -31,7 +31,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , accessTo
             "Content-Type" : "application/json"
         },
         url: url,
-        json:  postBodyjson 
+        json:  parsedJson 
     }
 
     ,function(err, response, body){

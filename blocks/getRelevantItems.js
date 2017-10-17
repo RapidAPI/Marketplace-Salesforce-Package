@@ -2,7 +2,7 @@
 
 module.exports = (req , res  , template) =>{
  
-    const {args :{lastUpdatedIdsObjects, sobject_lastUpdatedId	, instance , accessToken}} = req.body;
+    const {args :{sObjects ,lastUpdatedId, sobject_lastUpdatedId	, instance , accessToken}} = req.body;
     //template(req,res,urlEnding,urlParams , instance , accessToken)
 
     if(sObjects){

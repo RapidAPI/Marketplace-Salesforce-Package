@@ -17,7 +17,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , accessTo
     let to = args.to || "to";
     let url = ""
     if(urlParams){
-        url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}/${urlParams}`;
+        url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}?${urlParams}`;
     }
     else{
         url = `https://${instance}.${baseUrl}/v${version}/${urlEnding}`;

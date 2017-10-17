@@ -371,7 +371,7 @@ module.exports.do = function(req, res){
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"actionName", type:"String", info:"the required action to return", required: false}
+                {name:"actionName", type:"String", info:"the required action to return", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
@@ -383,7 +383,7 @@ module.exports.do = function(req, res){
             "name":"getObjectsActionsDefaultValuesById",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"sObjectName", type:"String", info:"the SObject required", required: false},                  
+                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"actionName", type:"String", info:"the required action to return", required: true},
                 {name:"contextId", type:"String", info:"the required action to return", required: true}, 
@@ -469,7 +469,7 @@ module.exports.do = function(req, res){
             "name":"getSugestedArticles",
             "args":[
                 {name:"sObjectName", type:"String", info:"the SObject required", required: true},                                  
-                {name:"language", type:"credentials", info:"Language that the article is written in.", required: true},                
+                {name:"language", type:"string", info:"Language that the article is written in.", required: true},                
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"description", type:"String", info:"Text of the description. Valid only for new records without an existing ID and required if subject is null.", required: false},
@@ -797,9 +797,7 @@ module.exports.do = function(req, res){
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"group", type:"String", info:"the group to filter the data", required: true},
-                {name:"sObjectName", type:"String", info:"KnowledgeArticleVersion only.... for now", required: true},
-                {name:"category", type:"String", info:"", required: true},
+
             ],
             "callbacks":[
                 {name:"success", info:"Success"},

@@ -28,6 +28,7 @@
     "getListViews" : "GET",
     "getObjectRows" : "GET",
     "getObjectRowsByExternalId" : "GET",
+    "getObjectsActionsDefaultValues" : "GET",
     "getObjectsActionsDefaultValuesById" : "GET",
     "getObjectsDeletedRecords" : "GET",
     "getObjectsNamedLayouts" : "GET",
