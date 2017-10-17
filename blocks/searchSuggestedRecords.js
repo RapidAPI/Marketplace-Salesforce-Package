@@ -6,34 +6,34 @@ module.exports = (req , res  , template) =>{
     topicId, type, userId, useSearchScope, where, instance , accessToken}} = req.body;    
     let urlParams = `q=${query}&sobject=${sObject}`
     if(fields){
-        urlParams =  urlParams.append(`${fields}`);
+        urlParams =  urlParams.concat(`${fields}`);
     }
     if(groupId){
-        urlParams = urlParams.append(`&groupId=${groupId}`);
+        urlParams = urlParams.concat(`&groupId=${groupId}`);
     }
     if(ignoreUnsupportedSObjects){
-        urlParams = urlParams.append(`&ignoreUnsupportedSObjects=${ignoreUnsupportedSObjects}`);
+        urlParams = urlParams.concat(`&ignoreUnsupportedSObjects=${ignoreUnsupportedSObjects}`);
     }
     if(limit){
-        urlParams = urlParams.append(`&limit=${limit}`);
+        urlParams = urlParams.concat(`&limit=${limit}`);
     }
     if(networkId){
-        urlParams = urlParams.append(`&networkId=${networkId}`);
+        urlParams = urlParams.concat(`&networkId=${networkId}`);
     }
     if(topicId){
-        urlParams =  urlParams.append(`&topicId=${topicId}`);
+        urlParams =  urlParams.concat(`&topicId=${topicId}`);
     }
     if(type){
-        urlParams = urlParams.append(`&type=${type}`);
+        urlParams = urlParams.concat(`&type=${type}`);
     }
     if(userId){
-        urlParams = urlParams.append(`&userId=${userId}`);
+        urlParams = urlParams.concat(`&userId=${userId}`);
     }
     if(useSearchScope){
-        urlParams = urlParams.append(`&useSearchScope=${useSearchScope}`);
+        urlParams = urlParams.concat(`&useSearchScope=${useSearchScope}`);
     }
     if(where){
-        urlParams =  urlParams.append(`&where=${where}`);
+        urlParams =  urlParams.concat(`&where=${where}`);
     }
 
     
