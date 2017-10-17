@@ -4,7 +4,7 @@ module.exports = (req , res  , template) =>{
  
     const {args : {sObjectName ,workflowRuleId , instance , accessToken}} = req.body;
     //template(req,res,urlEnding,urlParams , instance , accessToken)
-    url = `process/rules`;
+    url = `process/rules/`;
     if(sObjectName){
         if(workflowRuleId){
             url = url.concat(`${sObjectName}/${workflowRuleId}`);
