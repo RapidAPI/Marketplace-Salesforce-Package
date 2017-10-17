@@ -349,22 +349,7 @@ module.exports.do = function(req, res){
             ],
             "description":"Returns a list of specific object’s actions as well as global actions."
         },
-        
-        {
-            "name":"postObjectsQuickActions",
-            "args":[
-                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
-                {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"actionName", type:"String", info:"the required action to return", required: true},
-                {name:"inputs", type:"String", info:"json formated body for new object to be created", required: true}
-            ],
-            "callbacks":[
-                {name:"success", info:"Success"},
-                {name:"error", info:"Error"}
-            ],
-            "description":"Return a specific object's action.15"
-        },
+      
         {
             "name":"getObjectsActionsDefaultValues",
             "args":[
