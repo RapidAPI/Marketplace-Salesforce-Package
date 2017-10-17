@@ -941,7 +941,7 @@ module.exports.do = function(req, res){
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"input", type:"String", info:"input for action creation", required: true},
+                {name:"inputs", type:"String", info:"input for action creation", required: true},
                 {name:"actionName", type:"String", info:"action name", required: true}
             ],
             "callbacks":[
