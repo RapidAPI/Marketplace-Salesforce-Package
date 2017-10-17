@@ -16,5 +16,5 @@ module.exports = (req , res  , template) =>{
     return template (req, res,url , null,instance , accessToken);
 
 }
-
+        
 

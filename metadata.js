@@ -357,7 +357,7 @@ module.exports.do = function(req, res){
                 {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"actionName", type:"String", info:"the required action to return", required: true},
-                {name:"jsonbody", type:"String", info:"json formated body for new object to be created", required: true}
+                {name:"inputs", type:"String", info:"json formated body for new object to be created", required: true}
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
