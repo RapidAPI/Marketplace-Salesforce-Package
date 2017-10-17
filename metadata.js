@@ -836,7 +836,7 @@ module.exports.do = function(req, res){
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
                 {name:"accessToken", type:"String", info:"Oath acces token", required: true},
                 {name:"workflowRuleId", type:"String", info:"rule id", required: false},
-                {name:"sObjectName", type:"String", info:"the SObject required", required: true},                  
+                {name:"sObjectName", type:"String", info:"the SObject required", required: false},                  
             ],
             "callbacks":[
                 {name:"success", info:"Success"},
