@@ -31,14 +31,16 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended:true}));
 app.get(`/api/${PACKAGE_NAME}`, require('./metadata.js').do);
 
 //For each block, a POST /api/PACKAGE_NAME/BLOCK_NAME should execute the block
+try{
+    Object.keys(jsonMappingRequest).forEach(api => {
+        let methodType = jsonMappingRequest[api];
+        let template = templates[methodType];
+        app.post(`/api/${PACKAGE_NAME}/${api}`,(req,res) =>  require(`./blocks/${api}.js`)(req , res ,template));
+    })
+}
+catch(e){
 
-Object.keys(jsonMappingRequest).forEach(api => {
-    let methodType = jsonMappingRequest[api];
-    let template = templates[methodType];
-    app.post(`/api/${PACKAGE_NAME}/${api}`,(req,res) =>  require(`./blocks/${api}.js`)(req , res ,template));
-})
-
-
+}
 
 
 
