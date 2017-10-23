@@ -1,12 +1,12 @@
-[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/salesforce/functions?utm_source=RapidAPIGitHub_salesforceFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Salesforce/functions?utm_source=RapidAPIGitHub_SalesforceFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
-# salesforce Package
+# Salesforce Package
 salesforce provides companies with an interface for case management and task management, and a system for automatically routing and escalating important events.
-* Domain: [salesforce](http://salesforce.com)
+* Domain: [Salesforce](http://salesforce.com)
 * Credentials: instance, client_id, client_secret, username, password
 
 ## How to get credentials: 
-0. //TODO: add credentials 
+0. Item one 
 1. Item two 
 
 
@@ -21,7 +21,7 @@ salesforce provides companies with an interface for case management and task man
  |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
  
 
-## salesforce.getAccessToken
+## Salesforce.getAccessToken
 Lists summary information about each Salesforce version currently available, including the version, label, and a link to each version's root.
 
 | Field        | Type       | Description
@@ -32,14 +32,14 @@ Lists summary information about each Salesforce version currently available, inc
 | username     | credentials| username on salesforce.
 | password     | credentials| password on salesforce.
 
-## salesforce.getAllVersions
+## Salesforce.getAllVersions
 Lists summary information about each Salesforce version currently available, including the version, label, and a link to each version's root.
 
 | Field   | Type       | Description
 |---------|------------|----------
 | instance| credentials| the user instance on salesforce.
 
-## salesforce.getResourcesByVersion
+## Salesforce.getResourcesByVersion
 Lists available resources for the specified API version, including resource name and URI.
 
 | Field      | Type       | Description
@@ -47,7 +47,7 @@ Lists available resources for the specified API version, including resource name
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.getLimits
+## Salesforce.getLimits
 Lists information about limits in your org. This resource is available in REST API version 29.0 and later for API users with the View Setup and Configuration permission.
 
 | Field      | Type       | Description
@@ -55,16 +55,16 @@ Lists information about limits in your org. This resource is available in REST A
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.describeGlobal
+## Salesforce.describeGlobal
 Lists the available objects and their metadata for your organization’s data. In addition, it provides the organization encoding, as well as the maximum batch size permitted in queries.
 
 | Field        | Type       | Description
 |--------------|------------|----------
 | instance     | credentials| the user instance on salesforce.
 | accessToken  | String     | Oath acces token
-| modifiedSince| String     | query only colums moldified within the given range
+| modifiedSince| Datepicker | query only colums moldified within the given range
 
-## salesforce.getAccountObjectMetadata
+## Salesforce.getAccountObjectMetadata
 Retrieve the metadata for the Account object using the GET method.
 
 | Field      | Type       | Description
@@ -73,7 +73,7 @@ Retrieve the metadata for the Account object using the GET method.
 | sObjectName| String     | the SObject required
 | accessToken| String     | Oath acces token
 
-## salesforce.createSObject
+## Salesforce.createSObject
 Create a new Account object using the POST method
 
 | Field      | Type       | Description
@@ -83,7 +83,7 @@ Create a new Account object using the POST method
 | sObjectName| String     | Object name to create
 | inputs     | String     | json formated body for new object to be created
 
-## salesforce.describeSingleObject
+## Salesforce.describeSingleObject
 Completely describes the individual metadata at all levels for the specified object.
 
 | Field        | Type       | Description
@@ -91,9 +91,9 @@ Completely describes the individual metadata at all levels for the specified obj
 | instance     | credentials| the user instance on salesforce.
 | accessToken  | String     | Oath acces token
 | sObjectName  | String     | the SObject required
-| modifiedSince| String     | query only colums moldified within the given range
+| modifiedSince| Datepicker | query only colums moldified within the given range
 
-## salesforce.getObjectsDeletedRecords
+## Salesforce.getObjectsDeletedRecords
 Retrieves the list of individual records that have been deleted within the given timespan for the specified object.
 
 | Field      | Type       | Description
@@ -101,10 +101,10 @@ Retrieves the list of individual records that have been deleted within the given
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 | sObjectName| String     | the SObject required
-| start      | String     | Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.
-| end        | String     |  Ending date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data. 
+| start      | Datepicker | Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.
+| end        | Datepicker |  Ending date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data. 
 
-## salesforce.getObjectsUpdatedRecords
+## Salesforce.getObjectsUpdatedRecords
 Retrieves the list of individual records that have been updated (added or changed) within the given timespan for the specified object.
 
 | Field      | Type       | Description
@@ -112,10 +112,10 @@ Retrieves the list of individual records that have been updated (added or change
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 | sObjectName| String     | the SObject required
-| start      | String     | Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.
-| end        | String     |  Ending date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data. 
+| start      | Datepicker | Starting date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data.
+| end        | Datepicker |  Ending date/time (Coordinated Universal Time (UTC)—not local— timezone) of the timespan for which to retrieve the data. 
 
-## salesforce.getObjectsNamedLayouts
+## Salesforce.getObjectsNamedLayouts
 Retrieves information about alternate named layouts for a given object.
 
 | Field      | Type       | Description
@@ -125,7 +125,7 @@ Retrieves information about alternate named layouts for a given object.
 | sObjectName| String     | the SObject required
 | layoutName | String     | the layout for for the returned query
 
-## salesforce.getObjectRows
+## Salesforce.getObjectRows
 Accesses records based on the specified object ID.
 
 | Field      | Type       | Description
@@ -136,7 +136,7 @@ Accesses records based on the specified object ID.
 | recordId   | String     | the record id to fetch
 | fields     | String     | Optional list of fields used to return values for.
 
-## salesforce.deleteObjectRows
+## Salesforce.deleteObjectRows
 DELETE method to delete records.
 
 | Field      | Type       | Description
@@ -146,7 +146,7 @@ DELETE method to delete records.
 | sObjectName| String     | the SObject required
 | recordId   | String     | the record id to fetch
 
-## salesforce.updateObjectRows
+## Salesforce.updateObjectRows
 PATCH method to update records.
 
 | Field      | Type       | Description
@@ -157,7 +157,7 @@ PATCH method to update records.
 | recordId   | String     | the record id to fetch
 | fields     | String     | Optional list of fields used to return values for.
 
-## salesforce.getObjectRowsByExternalId
+## Salesforce.getObjectRowsByExternalId
 Gets records based on the value of a specified external ID field.
 
 | Field      | Type       | Description
@@ -168,7 +168,7 @@ Gets records based on the value of a specified external ID field.
 | fieldName  | String     | the  specified external ID field
 | fieldValue | String     | the value for the object.
 
-## salesforce.deleteObjectRowsByExternalId
+## Salesforce.deleteObjectRowsByExternalId
 strong textDelete object records based on the value of a specified external ID field.
 
 | Field      | Type       | Description
@@ -179,7 +179,7 @@ strong textDelete object records based on the value of a specified external ID f
 | fieldName  | String     | the  specified external ID field
 | fieldValue | String     | the value for the object.
 
-## salesforce.updateObjectRowsByExternalId
+## Salesforce.updateObjectRowsByExternalId
 Updates records based on the value of a specified external ID field.
 
 | Field      | Type       | Description
@@ -189,8 +189,9 @@ Updates records based on the value of a specified external ID field.
 | sObjectName| String     | the SObject required
 | fieldName  | String     | the  specified external ID field
 | fieldValue | String     | the value for the object.
+| fields     | String     | the values to change.
 
-## salesforce.postObjectRowsByExternalId
+## Salesforce.postObjectRowsByExternalId
 adds records based on the value of a specified external ID field.
 
 | Field      | Type       | Description
@@ -202,7 +203,7 @@ adds records based on the value of a specified external ID field.
 | fieldValue | String     | the value for the object.
 | jsonbody   | String     | json formated body for new object to be created
 
-## salesforce.getApprovalLayouts
+## Salesforce.getApprovalLayouts
 Returns a list of approval layouts for a specified object. Specify a particular approval process name to limit the return value to one specific approval layout.
 
 | Field              | Type       | Description
@@ -212,7 +213,7 @@ Returns a list of approval layouts for a specified object. Specify a particular 
 | sObjectName        | String     | the SObject required
 | approvalProcessName| String     | the specified approval Process Name field
 
-## salesforce.getCompactLayouts
+## Salesforce.getCompactLayouts
 Returns a list of compact layouts for a specific object.
 
 | Field      | Type       | Description
@@ -221,7 +222,7 @@ Returns a list of compact layouts for a specific object.
 | accessToken| String     | Oath acces token
 | sObjectName| String     | the SObject required
 
-## salesforce.describeLayouts
+## Salesforce.describeLayouts
 Returns a list of layouts and descriptions. The list of fields and the layout name are returned.
 
 | Field       | Type       | Description
@@ -231,16 +232,15 @@ Returns a list of layouts and descriptions. The list of fields and the layout na
 | sObjectName | String     | the SObject required
 | recordTypeId| String     | the id for the record type
 
-## salesforce.getPlatformAction
+## Salesforce.getPlatformAction
 Returns the description of the PlatformAction.
 
 | Field      | Type       | Description
 |------------|------------|----------
 | instance   | credentials| the user instance on salesforce.
-| version    | String     | the api version used
 | accessToken| String     | Oath acces token
 
-## salesforce.getObjectsQuickActions
+## Salesforce.getObjectsQuickActions
 Returns a list of specific object’s actions as well as global actions.
 
 | Field      | Type       | Description
@@ -250,18 +250,7 @@ Returns a list of specific object’s actions as well as global actions.
 | accessToken| String     | Oath acces token
 | actionName | String     | the required action to return
 
-## salesforce.postObjectsQuickActions
-Return a specific object's action.15
-
-| Field      | Type       | Description
-|------------|------------|----------
-| instance   | credentials| the user instance on salesforce.
-| sObjectName| String     | the SObject required
-| accessToken| String     | Oath acces token
-| actionName | String     | the required action to return
-| jsonbody   | String     | json formated body for new object to be created
-
-## salesforce.getObjectsActionsDefaultValues
+## Salesforce.getObjectsActionsDefaultValues
 Return a specific action’s descriptive detail
 
 | Field      | Type       | Description
@@ -271,7 +260,7 @@ Return a specific action’s descriptive detail
 | accessToken| String     | Oath acces token
 | actionName | String     | the required action to return
 
-## salesforce.getObjectsActionsDefaultValuesById
+## Salesforce.getObjectsActionsDefaultValuesById
 Return a specific action’s descriptive detail
 
 | Field      | Type       | Description
@@ -282,7 +271,7 @@ Return a specific action’s descriptive detail
 | actionName | String     | the required action to return
 | contextId  | String     | the required action to return
 
-## salesforce.getRecordsByRelationship
+## Salesforce.getRecordsByRelationship
 Return a specific action’s descriptive detail
 
 | Field                | Type       | Description
@@ -295,7 +284,7 @@ Return a specific action’s descriptive detail
 | relationshipFieldName| String     | the name of relationship Field to fetch
 | fields               | String     | Optional list of fields used to return values for.
 
-## salesforce.deleteRecordByRelationship
+## Salesforce.deleteRecordByRelationship
 Deletes record by traversing object relationships via friendly URLs. 
 
 | Field      | Type       | Description
@@ -306,7 +295,7 @@ Deletes record by traversing object relationships via friendly URLs.
 | actionName | String     | the required action to return
 | contextId  | String     | the required action to return
 
-## salesforce.updateRecordByRelationship
+## Salesforce.updateRecordByRelationship
 Updates record by traversing object relationships via friendly URLs.
 
 | Field      | Type       | Description
@@ -317,12 +306,13 @@ Updates record by traversing object relationships via friendly URLs.
 | actionName | String     | the required action to return
 | contextId  | String     | the required action to return
 
-## salesforce.getSuggestedArticlesByRecordId
+## Salesforce.getSuggestedArticlesByRecordId
 Returns a list of suggested Salesforce Knowledge articles for a case, work order, or work order line item.
 
 | Field           | Type       | Description
 |-----------------|------------|----------
-| language        | credentials| Language that the article is written in.
+| RecordID        | String     | record id to query by.
+| language        | String     | Language that the article is written in.
 | instance        | credentials| the user instance on salesforce.
 | sObjectName     | String     | the SObject required
 | accessToken     | String     | Oath acces token
@@ -336,12 +326,13 @@ Returns a list of suggested Salesforce Knowledge articles for a case, work order
 | topics          | String     | The topic of returned articles. 
 | validationStatus| String     | The validation status of returned articles. 
 
-## salesforce.getSugestedArticles
+## Salesforce.getSugestedArticles
 Returns a list of suggested Salesforce Knowledge articles for a case, work order, or work order line item.
 
 | Field           | Type       | Description
 |-----------------|------------|----------
-| language        | credentials| Language that the article is written in.
+| sObjectName     | String     | the SObject required
+| language        | string     | Language that the article is written in.
 | instance        | credentials| the user instance on salesforce.
 | accessToken     | String     | Oath acces token
 | description     | String     | Text of the description. Valid only for new records without an existing ID and required if subject is null.
@@ -354,17 +345,16 @@ Returns a list of suggested Salesforce Knowledge articles for a case, work order
 | topics          | String     | The topic of returned articles. 
 | validationStatus| String     | The validation status of returned articles. 
 
-## salesforce.getUserPasswordInformation
+## Salesforce.getUserPasswordInformation
  get information about a user password
 
 | Field      | Type       | Description
 |------------|------------|----------
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
-| actionName | String     | the required action to return
 | userId     | String     | the user id to fetch
 
-## salesforce.setUserPassword
+## Salesforce.setUserPassword
  Sets user password.
 
 | Field      | Type       | Description
@@ -374,17 +364,16 @@ Returns a list of suggested Salesforce Knowledge articles for a case, work order
 | userId     | String     | the user id to fetch
 | newPassword| String     | the user id to fetch
 
-## salesforce.resetUserPassword
+## Salesforce.resetUserPassword
  Resets the user password.
 
 | Field      | Type       | Description
 |------------|------------|----------
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
-| actionName | String     | the required action to return
 | userId     | String     | the user id to fetch
 
-## salesforce.getPlatformEventByName
+## Salesforce.getPlatformEventByName
  Gets the definition of a platform event in JSON format for a given event name.
 
 | Field            | Type       | Description
@@ -393,7 +382,7 @@ Returns a list of suggested Salesforce Knowledge articles for a case, work order
 | accessToken      | String     | Oath acces token
 | platformEventName| String     | the platform event name to fetch
 
-## salesforce.getPlatformEventBySchemaId
+## Salesforce.getPlatformEventBySchemaId
 Gets the definition of a platform event in JSON format for a given schema ID.
 
 | Field      | Type       | Description
@@ -402,7 +391,7 @@ Gets the definition of a platform event in JSON format for a given schema ID.
 | accessToken| String     | Oath acces token
 | schemaId   | String     | the platform event id to fetch
 
-## salesforce.getSalesforceAppDropDownItems
+## Salesforce.getSalesforceAppDropDownItems
 Returns a list of items in the Salesforce app drop-down menu.
 
 | Field      | Type       | Description
@@ -410,7 +399,7 @@ Returns a list of items in the Salesforce app drop-down menu.
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.getSalesforceNavMenuItems
+## Salesforce.getSalesforceNavMenuItems
 Returns a list of items in the Salesforce1 navigation menu.
 
 | Field      | Type       | Description
@@ -418,16 +407,16 @@ Returns a list of items in the Salesforce1 navigation menu.
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.getCompactLayouts
+## Salesforce.getCompactLayouts
 Returns a list of compact layouts for multiple objects.
 
 | Field      | Type       | Description
 |------------|------------|----------
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
-| objects    | String     | A comma-delimited list of objects. The primary compact layout for each object in this list will be returned in the response of this resource.                
+| sObjectName| String     | A comma-delimited list of objects. The primary compact layout for each object in this list will be returned in the response of this resource.                
 
-## salesforce.getListActionsTypes
+## Salesforce.getListActionsTypes
 Retrieve a list of general action types for the current organization.
 
 | Field      | Type       | Description
@@ -435,7 +424,7 @@ Retrieve a list of general action types for the current organization.
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.postToStandardAction
+## Salesforce.postToStandardAction
  Make a post request to an standard action type. 
 
 | Field      | Type       | Description
@@ -445,7 +434,7 @@ Retrieve a list of general action types for the current organization.
 | actionName | String     | the required action to return
 | inputs     | String     | A JSON object{ "inputs": [ "field": "value" ] }
 
-## salesforce.postToCustomAction
+## Salesforce.postToCustomAction
 Post request to any custom action.
 
 | Field      | Type       | Description
@@ -455,7 +444,7 @@ Post request to any custom action.
 | actionName | String     | the required action to return
 | inputs     | String     | A JSON object{ "inputs": [ "field": "value" ] }
 
-## salesforce.getStandardActions
+## Salesforce.getStandardActions
 Get a list of all available standard actions.
 
 | Field      | Type       | Description
@@ -463,17 +452,15 @@ Get a list of all available standard actions.
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.getCustomActions
+## Salesforce.getCustomActions
  Get a list of all available custom actions.
 
 | Field      | Type       | Description
 |------------|------------|----------
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
-| actionName | String     | the required action to return
-| userId     | String     | the user id to fetch
 
-## salesforce.describeListView
+## Salesforce.describeListView
 Returns detailed information about a list view, including the ID, the columns, and the SOQL query.
 
 | Field       | Type       | Description
@@ -483,7 +470,7 @@ Returns detailed information about a list view, including the ID, the columns, a
 | sObjectType | String     | the type of object
 | queryLocator| String     | The children records can be accessed in the execute method of Batch Apex
 
-## salesforce.getListViewResults
+## Salesforce.getListViewResults
  Get a list of all available custom actions.
 
 | Field      | Type       | Description
@@ -493,7 +480,7 @@ Returns detailed information about a list view, including the ID, the columns, a
 | sObjectType| String     | the type of object
 | listViewId | String     | the view id to fetch
 
-## salesforce.getListViews
+## Salesforce.getListViews
 Returns the list of list views for the specified sObject, including the ID and other basic information about each list view.
 
 | Field      | Type       | Description
@@ -502,7 +489,7 @@ Returns the list of list views for the specified sObject, including the ID and o
 | accessToken| String     | Oath acces token
 | sObjectType| String     | the type of object
 
-## salesforce.getDataCategoryGroups
+## Salesforce.getDataCategoryGroups
 Get data category groups that are visible to the current user.
 
 | Field            | Type       | Description
@@ -512,7 +499,7 @@ Get data category groups that are visible to the current user.
 | sObjectName      | String     | KnowledgeArticleVersion only.... for now
 | topCategoriesOnly| Boolean    | Boolean
 
-## salesforce.getDataCategoryDetail
+## Salesforce.getDataCategoryDetail
  Get data category details and the child categories by a pgiven category.
 
 | Field      | Type       | Description
@@ -523,7 +510,7 @@ Get data category groups that are visible to the current user.
 | group      | String     | the group to filter the data
 | category   | String     | data Categories
 
-## salesforce.getArticlesList
+## Salesforce.getArticlesList
 Get a page of online articles for the given language and category through either search or query.
 
 | Field      | Type       | Description
@@ -539,7 +526,7 @@ Get a page of online articles for the given language and category through either
 | pageSize   | String     | 
 | pageNumber | String     | 
 
-## salesforce.getArticleDetails
+## Salesforce.getArticleDetails
 Get all article fields, accessible to the user.
 
 | Field         | Type       | Description
@@ -550,7 +537,7 @@ Get all article fields, accessible to the user.
 | channel       | String     | defaults to user’s context.
 | updateViewStat| bolean     | boolean, defaults to true. If true, API updates the view count in the given channel as well as the total view count.
 
-## salesforce.parameterizedSearch
+## Salesforce.parameterizedSearch
  Get a list of all available custom actions.
 
 | Field          | Type       | Description
@@ -577,7 +564,15 @@ Get all article fields, accessible to the user.
 | updateTracking | String     | Specifies a value of true to track keywords that are used in Salesforce Knowledge article searches only.If unspecified, the default value of false is applied.
 | updateViewStat | String     | Specifies a value of true to update an article’s view statistics. Valid only for Salesforce Knowledge article searches.If unspecified, the default value of false is applied.
 
-## salesforce.submitRecordForApproval
+## Salesforce.getProcessApprovals
+Submit a particular record if that entity supports an approval process and one has already been defined. 
+
+| Field      | Type       | Description
+|------------|------------|----------
+| instance   | credentials| the user instance on salesforce.
+| accessToken| String     | Oath acces token
+
+## Salesforce.submitRecordForApproval
 Submit a particular record if that entity supports an approval process and one has already been defined. 
 
 | Field          | Type       | Description
@@ -586,7 +581,7 @@ Submit a particular record if that entity supports an approval process and one h
 | accessToken    | String     | Oath acces token
 | approvalRequest| String     | A JSON object
 
-## salesforce.getAllWorkflowRules
+## Salesforce.getAllWorkflowRules
  Returns a list of all active workflow rules.
 
 | Field      | Type       | Description
@@ -594,7 +589,17 @@ Submit a particular record if that entity supports an approval process and one h
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.triggerProcessRules
+## Salesforce.getSingleProcessRule
+ Returns a list of all active workflow rules.
+
+| Field         | Type       | Description
+|---------------|------------|----------
+| instance      | credentials| the user instance on salesforce.
+| accessToken   | String     | Oath acces token
+| workflowRuleId| String     | rule id
+| sObjectName   | String     | the SObject required
+
+## Salesforce.triggerProcessRules
 Trigger process rules. All rules associated with the specified ID will be evaluated, regardless of the evaluation criteria. All IDs must be for records on the same object.
 
 | Field      | Type       | Description
@@ -604,7 +609,7 @@ Trigger process rules. All rules associated with the specified ID will be evalua
 | contextIds | String     | the required action to return
 | userId     | String     | An array of contextIds as a JSON object in the request body
 
-## salesforce.query
+## Salesforce.query
 Executes the specified SOQL query.
 
 | Field      | Type       | Description
@@ -613,7 +618,7 @@ Executes the specified SOQL query.
 | accessToken| String     | Oath acces token
 | query      | String     | the query to execute.
 
-## salesforce.explainQuery
+## Salesforce.explainQuery
 For retrieving query performance feedback without executing the query or for retrieving query performance feedback on a report or list view.
 
 | Field      | Type       | Description
@@ -622,7 +627,7 @@ For retrieving query performance feedback without executing the query or for ret
 | accessToken| String     | Oath acces token
 | explain    | String     | A SOQL query to get performance feedback on. Use explain instead of q to get a response that details how Salesforce will process your query. You can use this feedback to further optimize your queries. You can also use a report or list view ID in place of the query String to get feedback on how Salesforce will process your report or list view
 
-## salesforce.additionalQueryResults
+## Salesforce.additionalQueryResults
 For retrieving additional query results if the initial results are too large.
 
 | Field      | Type       | Description
@@ -631,7 +636,7 @@ For retrieving additional query results if the initial results are too large.
 | accessToken| String     | Oath acces token
 | queryId    | String     | the query id to retrive
 
-## salesforce.queryAll
+## Salesforce.queryAll
 Executes the specified SOQL query. Unlike the Query resource, QueryAll will return records that have been deleted because of a merge or delete. QueryAll will also return information about archived Task and Event records.
 
 | Field      | Type       | Description
@@ -640,7 +645,7 @@ Executes the specified SOQL query. Unlike the Query resource, QueryAll will retu
 | accessToken| String     | Oath acces token
 | query      | String     | the query to execute.
 
-## salesforce.additionalQueryAll
+## Salesforce.additionalQueryAll
 For retrieving additional query results if the initial results are too large.
 
 | Field      | Type       | Description
@@ -649,7 +654,7 @@ For retrieving additional query results if the initial results are too large.
 | accessToken| String     | Oath acces token
 | queryId    | String     | the query id to retrive
 
-## salesforce.getQuickActions
+## Salesforce.getQuickActions
 Returns a list of global actions and object-specific actions.
 
 | Field      | Type       | Description
@@ -657,15 +662,17 @@ Returns a list of global actions and object-specific actions.
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.postQuickAction
+## Salesforce.postQuickAction
 Invoke a specified quick action.
 
 | Field      | Type       | Description
 |------------|------------|----------
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
+| inputs     | String     | input for action creation
+| actionName | String     | action name
 
-## salesforce.getRecentListViews
+## Salesforce.getRecentListViews
 Returns the list of recently used list views for the given sObject type.
 
 | Field      | Type       | Description
@@ -674,7 +681,7 @@ Returns the list of recently used list views for the given sObject type.
 | accessToken| String     | Oath acces token
 | sObjectType| String     | the type of object
 
-## salesforce.getRecentlyViewedItems
+## Salesforce.getRecentlyViewedItems
 Gets the most recently accessed items that were viewed or referenced by the current user. Salesforce stores information about record views in the interface and uses it to generate a list of recently viewed and referenced records, such as in the sidebar and for the auto-complete options in search.
 
 | Field      | Type       | Description
@@ -683,7 +690,7 @@ Gets the most recently accessed items that were viewed or referenced by the curr
 | accessToken| String     | Oath acces token
 | limit      | String     | An optional limit that specifies the maximum number of records to be returned. If this parameter is not specified, the default maximum number of records returned is the maximum number of entries in RecentlyViewed, which is 200 records per object.
 
-## salesforce.getRecordCount
+## Salesforce.getRecordCount
 Lists information about object record counts in your organization.
 
 | Field      | Type       | Description
@@ -692,7 +699,7 @@ Lists information about object record counts in your organization.
 | accessToken| String     | Oath acces token
 | sObjects   | String     |  comma-delimited list of object names. If a listed object is not found in the org, it is ignored and not returned in the response.This parameter is optional. If this parameter is not provided, the resource returns record counts for all objects in the org.
 
-## salesforce.getRelevantItems
+## Salesforce.getRelevantItems
 Gets the current user’s most relevant items. Relevant items include records for objects in the user’s global search scope and also most recently used (MRU) objects.
 
 | Field                | Type       | Description
@@ -703,7 +710,7 @@ Gets the current user’s most relevant items. Relevant items include records fo
 | sobjects             | String     | To scope the results to a particular object or set of objects, specify the name for one or more sObjects. Case sensitive.
 | sobject_lastUpdatedId| String     |  Compares the current list of relevant items for this particular object to a previous version, if available. Specify the lastUpdatedId value returned in a previous response.
 
-## salesforce.getKnowledgeLanguageSettings
+## Salesforce.getKnowledgeLanguageSettings
 Returns the existing Knowledge language settings, including the default knowledge language and a list of supported Knowledge language information.
 
 | Field      | Type       | Description
@@ -711,7 +718,7 @@ Returns the existing Knowledge language settings, including the default knowledg
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.search
+## Salesforce.search
 Executes the specified SOSL search. The search String must be URL-encoded.
 
 | Field      | Type       | Description
@@ -720,7 +727,7 @@ Executes the specified SOSL search. The search String must be URL-encoded.
 | accessToken| String     | Oath acces token
 | query      | String     | tA SOSL statement that is properly URL-encoded.
 
-## salesforce.searchScopeOrder
+## Salesforce.searchScopeOrder
 Returns an ordered list of objects in the default global search scope of a logged-in user. Global search keeps track of which objects the user interacts with and how often and arranges the search results accordingly. Objects used most frequently appear at the top of the list.
 
 | Field      | Type       | Description
@@ -728,7 +735,7 @@ Returns an ordered list of objects in the default global search scope of a logge
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.searchResultsLayouts
+## Salesforce.searchResultsLayouts
 Returns search result layout information for the objects in the query String. For each object, this call returns the list of fields displayed on the search results page as columns, the number of rows displayed on the first page, and the label used on the search results page.
 
 | Field      | Type       | Description
@@ -737,7 +744,7 @@ Returns search result layout information for the objects in the query String. Fo
 | accessToken| String     | Oath acces token
 | query      | String     | tA SOSL statement that is properly URL-encoded.
 
-## salesforce.searchSuggestedRecords
+## Salesforce.searchSuggestedRecords
 Returns a list of suggested records whose names match the user’s search String. The suggestions resource provides a shortcut for users to navigate directly to likely relevant records, before performing a full search.
 
 | Field                    | Type       | Description
@@ -746,8 +753,8 @@ Returns a list of suggested records whose names match the user’s search String
 | accessToken              | String     | Oath acces token
 | query                    | String     | tA SOSL statement that is properly URL-encoded.
 | sObject                  | String     | the SObject required
-| fields                   | String     | Used for creating lookup queries. Specify multiple fields using a comma-separated list. Specifies which lookup fields to be returned in the response.
-| groupId                  | String     | groupId	Optional. Specifies one or more unique identifiers of one or more groups that the question to return was posted to. Specify multiple groups using a comma-separated list. This parameter is only applicable when the parameter type equals question. Don’t use with the userId.
+| fields                   | String     | format for this field:ccount.fields=Website,Phone&contact.fields=Phone .Used for creating lookup queries. Specify multiple fields using a comma-separated list. Specifies which lookup fields to be returned in the response.
+| groupId                  | String     | groupId Optional. Specifies one or more unique identifiers of one or more groups that the question to return was posted to. Specify multiple groups using a comma-separated list. This parameter is only applicable when the parameter type equals question. Don’t use with the userId.
 | ignoreUnsupportedSObjects| String     | Specifies what to do if unsupported objects are included in the request. If false and an unsupported object is included, an error is returned. If true and an unsupported object is included, the object is ignored and no error is returned. See the Unsupported Objects section for reference. The default is false.
 | limit                    | String     | 
 | networkId                | String     | 
@@ -757,7 +764,7 @@ Returns a list of suggested records whose names match the user’s search String
 | useSearchScope           | String     | 
 | where                    | String     | 
 
-## salesforce.searchSuggestedArticleTitleMatches
+## Salesforce.searchSuggestedArticleTitleMatches
 Returns a list of Salesforce Knowledge article titles that match the user’s search query String. Provides a shortcut to navigate directly to likely relevant articles before the user performs a search.
 
 | Field           | Type       | Description
@@ -774,7 +781,7 @@ Returns a list of Salesforce Knowledge article titles that match the user’s se
 | topics          | String     | 
 | validationStatus| String     | 
 
-## salesforce.searchSuggestedQueries
+## Salesforce.searchSuggestedQueries
 Returns a list of suggested searches based on the user’s query String text matching searches that other users have performed in Salesforce Knowledge. Provides a way to improve search effectiveness, before the user performs a search.
 
 | Field      | Type       | Description
@@ -786,7 +793,7 @@ Returns a list of suggested searches based on the user’s query String text mat
 | limit      | String     | limit of results.
 | channel    | String     | 
 
-## salesforce.getTabs
+## Salesforce.getTabs
 Returns a list of all tabs—including Lightning page tabs—available to the current user, regardless of whether the user has chosen to hide tabs via the All Tabs  tab 
 
 | Field      | Type       | Description
@@ -794,7 +801,7 @@ Returns a list of all tabs—including Lightning page tabs—available to the cu
 | instance   | credentials| the user instance on salesforce.
 | accessToken| String     | Oath acces token
 
-## salesforce.getThemes
+## Salesforce.getThemes
  Get a list of all available custom actions.
 
 | Field      | Type       | Description
