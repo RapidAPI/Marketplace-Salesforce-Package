@@ -41,7 +41,7 @@ module.exports =(req, res,urlEnding,urlParams,postBodyjson , instance , accessTo
         }
         else {
             // response.body = JSON.parse(response.body);            
-            r.contextWrites[to] = response;
+            r.contextWrites[to] = response.body;
             r.callback = 'success';
         }
         res.status(200).send(r);
