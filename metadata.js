@@ -297,19 +297,6 @@ module.exports.do = function(req, res){
             "description":"Returns a list of approval layouts for a specified object. Specify a particular approval process name to limit the return value to one specific approval layout."
         },
         {
-            "name":"getCompactLayouts",
-            "args":[
-                {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
-                {name:"accessToken", type:"String", info:"Oath acces token", required: true},
-                {name:"sObjectName", type:"String", info:"the SObject required", required: true}               
-            ],
-            "callbacks":[
-                {name:"success", info:"Success"},
-                {name:"error", info:"Error"}
-            ],
-            "description":"Returns a list of compact layouts for a specific object."
-        },
-        {
             "name":"describeLayouts",
             "args":[
                 {name:"instance", type:"credentials", info:"the user instance on salesforce.", required: true},
